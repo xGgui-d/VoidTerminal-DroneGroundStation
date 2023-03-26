@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SetingLine</class>
+ <widget class="QDialog" name="SetingLine">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>569</width>
+    <height>333</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#9BA4B4;
+color:#14274E;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="1" column="0" colspan="2">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QToolButton" name="tbtn_line1">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>曲线01</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_line_1"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="cb_line_1"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QToolButton" name="tbtn_line2">
+       <property name="text">
+        <string>曲线02</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_line_2"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QComboBox" name="cb_line_2"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QToolButton" name="tbtn_line3">
+       <property name="text">
+        <string>曲线03</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="le_line_3"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="cb_line_3"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QToolButton" name="tbtn_line4">
+       <property name="text">
+        <string>曲线04</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="le_line_4"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QComboBox" name="cb_line_4"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QToolButton" name="tbtn_line5">
+       <property name="text">
+        <string>曲线05</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="le_line_5"/>
+     </item>
+     <item row="4" column="2">
+      <widget class="QComboBox" name="cb_line_5"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QToolButton" name="tbtn_line6">
+       <property name="text">
+        <string>曲线06</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="le_line_6"/>
+     </item>
+     <item row="5" column="2">
+      <widget class="QComboBox" name="cb_line_6"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QToolButton" name="tbtn_line7">
+       <property name="text">
+        <string>曲线07</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="le_line_7"/>
+     </item>
+     <item row="6" column="2">
+      <widget class="QComboBox" name="cb_line_7"/>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="2">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QToolButton" name="tbtn_line8">
+       <property name="text">
+        <string>曲线08</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_line_8"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="cb_line_8"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QToolButton" name="tbtn_line9">
+       <property name="text">
+        <string>曲线09</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_line_9"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QComboBox" name="cb_line_9"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QToolButton" name="tbtn_line10">
+       <property name="text">
+        <string>曲线10</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="le_line_10"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="cb_line_10"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QToolButton" name="tbtn_line11">
+       <property name="text">
+        <string>曲线11</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="le_line_11"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QComboBox" name="cb_line_11"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QToolButton" name="tbtn_line12">
+       <property name="text">
+        <string>曲线12</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="le_line_12"/>
+     </item>
+     <item row="4" column="2">
+      <widget class="QComboBox" name="cb_line_12"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QToolButton" name="tbtn_line13">
+       <property name="text">
+        <string>曲线13</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="le_line_13"/>
+     </item>
+     <item row="5" column="2">
+      <widget class="QComboBox" name="cb_line_13"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QToolButton" name="tbtn_line14">
+       <property name="text">
+        <string>曲线14</string>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="le_line_14"/>
+     </item>
+     <item row="6" column="2">
+      <widget class="QComboBox" name="cb_line_14"/>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btn_ok">
+     <property name="text">
+      <string>设置完毕</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="btn_default">
+     <property name="text">
+      <string>恢复默认</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+color:#394867;
+</string>
+       </property>
+       <property name="text">
+        <string>曲线颜色</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+color:#394867;
+</string>
+       </property>
+       <property name="text">
+        <string>曲线宽度</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+color:#394867;
+</string>
+       </property>
+       <property name="text">
+        <string>曲线选择</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

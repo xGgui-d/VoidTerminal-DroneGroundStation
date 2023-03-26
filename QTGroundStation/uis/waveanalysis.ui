@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WaveAnalysis</class>
+ <widget class="QWidget" name="WaveAnalysis">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1178</width>
+    <height>892</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">background-color:#14274E;</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1154</width>
+        <height>868</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="2">
+        <widget class="QFrame" name="gridFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color:#394867;
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QwtPlot" name="qwtPlot">
+            <property name="styleSheet">
+             <string notr="true">color:white;
+font: 10pt &quot;微软雅黑&quot;;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="btn_settingLine">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: #9BA4B4;
+border-width: 3px;
+font: 75 9pt &quot;微软雅黑&quot;;
+color:white;
+}
+QPushButton:pressed{          
+background-color: #F1F6F9;
+border-style: inset;
+color:black;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>设置曲线</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="btn_exportToExcel">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: #9BA4B4;
+border-width: 3px;
+font: 75 9pt &quot;微软雅黑&quot;;
+color:white;
+}
+QPushButton:pressed{          
+background-color: #F1F6F9;
+border-style: inset;
+color:black;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>导出到excel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" rowspan="4">
+        <widget class="QFrame" name="gridFrame">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame{
+background-color:#394867;
+}</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="6">
+           <widget class="QCheckBox" name="cb_DATA_6">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="cb_DATA_1">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QCheckBox" name="cb_DATA_4">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QCheckBox" name="cb_DATA_5">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QCheckBox" name="cb_DATA_3">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QCheckBox" name="cb_DATA_2">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <widget class="QCheckBox" name="cb_DATA_7">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
+           <widget class="QCheckBox" name="cb_DATA_14">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QCheckBox" name="cb_DATA_13">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QCheckBox" name="cb_DATA_12">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QCheckBox" name="cb_DATA_11">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QCheckBox" name="cb_DATA_10">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QCheckBox" name="cb_DATA_9">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QCheckBox" name="cb_DATA_8">
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+color: white;
+font: 10pt &quot;微软雅黑&quot;;
+background-color:#394867;
+}
+QCheckBox::indicator::checked {
+   background-color:black;   /*设置选中状态*/
+}</string>
+            </property>
+            <property name="text">
+             <string>DATA_8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="2">
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">QLabel{font: 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+border-left: 5px solid #9BA4B4;
+background-color: #394867;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>选择曲线</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="btn_startOrStopShow">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: #9BA4B4;
+border-width: 3px;
+font: 75 9pt &quot;微软雅黑&quot;;
+color:white;
+}
+QPushButton:pressed{          
+background-color: #F1F6F9;
+border-style: inset;
+color:black;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>开始显示</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btn_showBrush">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: #9BA4B4;
+border-width: 3px;
+font: 75 9pt &quot;微软雅黑&quot;;
+color:white;
+}
+QPushButton:pressed{          
+background-color: #F1F6F9;
+border-style: inset;
+color:black;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>显示填充</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

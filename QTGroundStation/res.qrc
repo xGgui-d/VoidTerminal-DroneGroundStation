@@ -1,0 +1,57 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file>mianWidget.qss</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>imgs/flightStatus_1.png</file>
+        <file>imgs/flightStatus_2.png</file>
+        <file>imgs/flightStatus_3.png</file>
+        <file>imgs/flightStatus_4.png</file>
+        <file>imgs/close.png</file>
+        <file>imgs/flightStatus_titile.png</file>
+        <file>imgs/splitter.png</file>
+        <file>imgs/connect.png</file>
+        <file>imgs/clear.png</file>
+        <file>imgs/pause.png</file>
+        <file>imgs/start.png</file>
+        <file>imgs/sendAndRec.png</file>
+        <file>imgs/alRec.png</file>
+        <file>imgs/alSend.png</file>
+        <file>imgs/calculator.png</file>
+        <file>imgs/copy.png</file>
+        <file>imgs/help.png</file>
+        <file>imgs/morefunc.png</file>
+        <file>imgs/protocol.png</file>
+        <file>imgs/setting.png</file>
+        <file>imgs/lock.png</file>
+        <file>imgs/unlock.png</file>
+        <file>imgs/voltmeger.png</file>
+        <file>imgs/acc.png</file>
+        <file>imgs/alt.png</file>
+        <file>imgs/baro.png</file>
+        <file>imgs/gyro.png</file>
+        <file>imgs/inertia.png</file>
+        <file>imgs/mag.png</file>
+        <file>imgs/sixFace.png</file>
+        <file>imgs/exit.png</file>
+        <file>imgs/note.png</file>
+        <file>imgs/title.png</file>
+        <file>imgs/skin.png</file>
+        <file>imgs/error.png</file>
+        <file>imgs/clearBuff.png</file>
+        <file>imgs/loading.png</file>
+    </qresource>
+    <qresource prefix="/modelSkin">
+        <file>modelSkins/droneTex1.png</file>
+        <file>modelSkins/droneTex2.png</file>
+        <file>modelSkins/droneTex3.png</file>
+        <file>modelSkins/droneTex4.png</file>
+        <file>modelSkins/droneTex5.png</file>
+        <file>modelSkins/droneTex6.png</file>
+        <file>modelSkins/droneTex7.png</file>
+        <file>modelSkins/droneTex8.png</file>
+    </qresource>
+    <qresource prefix="/model">
+        <file>models/drone.obj</file>
+    </qresource>
+</RCC>

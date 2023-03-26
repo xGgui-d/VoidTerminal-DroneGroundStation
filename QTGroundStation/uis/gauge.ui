@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Gauge</class>
+ <widget class="QWidget" name="Gauge">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>660</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#9BA4B4;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 10pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="title">
+      <string>电压表</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="2" column="1">
+       <widget class="QLabel" name="lb_current">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="GaugePanel" name="gauge_voltage">
+        <property name="ringColor">
+         <color>
+          <red>254</red>
+          <green>254</green>
+          <blue>254</blue>
+         </color>
+        </property>
+        <property name="scaleColor">
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </property>
+        <property name="pointerColor">
+         <color>
+          <red>169</red>
+          <green>1</green>
+          <blue>1</blue>
+         </color>
+        </property>
+        <property name="textColor">
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </property>
+        <property name="unit">
+         <string>V</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>电流：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>电压：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="lb_voltage">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 10pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="title">
+      <string>指南针</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="GaugeCompassPan" name="gaugeCompassPan">
+        <property name="bgColor">
+         <color>
+          <red>20</red>
+          <green>39</green>
+          <blue>78</blue>
+         </color>
+        </property>
+        <property name="borderColor">
+         <color>
+          <red>225</red>
+          <green>225</green>
+          <blue>225</blue>
+         </color>
+        </property>
+        <property name="northDotColor">
+         <color>
+          <red>167</red>
+          <green>192</green>
+          <blue>214</blue>
+         </color>
+        </property>
+        <property name="otherDotColor">
+         <color>
+          <red>20</red>
+          <green>39</green>
+          <blue>78</blue>
+         </color>
+        </property>
+        <property name="pointerColor">
+         <color>
+          <red>90</red>
+          <green>202</green>
+          <blue>214</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 10pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="title">
+      <string>速度码表</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="GaugeSpeed" name="gaugeSpeed">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;微软雅黑&quot;;</string>
+        </property>
+        <property name="ringColorStart">
+         <color>
+          <red>198</red>
+          <green>199</green>
+          <blue>204</blue>
+         </color>
+        </property>
+        <property name="ringColorEnd">
+         <color>
+          <red>57</red>
+          <green>72</green>
+          <blue>103</blue>
+         </color>
+        </property>
+        <property name="pointerColor">
+         <color>
+          <red>208</red>
+          <green>41</green>
+          <blue>47</blue>
+         </color>
+        </property>
+        <property name="textColor">
+         <color>
+          <red>229</red>
+          <green>229</green>
+          <blue>229</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 10pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="title">
+      <string>温度计</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="RulerTemp" name="rulerTemp">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;微软雅黑&quot;;</string>
+        </property>
+        <property name="longStep">
+         <number>50</number>
+        </property>
+        <property name="shortStep">
+         <number>10</number>
+        </property>
+        <property name="space">
+         <number>0</number>
+        </property>
+        <property name="bgColorStart">
+         <color>
+          <red>155</red>
+          <green>164</green>
+          <blue>180</blue>
+         </color>
+        </property>
+        <property name="bgColorEnd">
+         <color>
+          <red>155</red>
+          <green>164</green>
+          <blue>180</blue>
+         </color>
+        </property>
+        <property name="lineColor">
+         <color>
+          <red>236</red>
+          <green>236</green>
+          <blue>236</blue>
+         </color>
+        </property>
+        <property name="barColor">
+         <color>
+          <red>89</red>
+          <green>189</green>
+          <blue>255</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GaugeCompassPan</class>
+   <extends>QWidget</extends>
+   <header>gaugecompasspan.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GaugeSpeed</class>
+   <extends>QWidget</extends>
+   <header>gaugespeed.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GaugePanel</class>
+   <extends>QWidget</extends>
+   <header>gaugepanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RulerTemp</class>
+   <extends>QWidget</extends>
+   <header>rulertemp.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

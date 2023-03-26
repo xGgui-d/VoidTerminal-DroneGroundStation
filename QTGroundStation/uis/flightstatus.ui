@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FlightStatus</class>
+ <widget class="QWidget" name="FlightStatus">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>983</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_9">
+   <item row="0" column="1">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">background-color:#14274E;</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>976</width>
+        <height>959</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#scrollAreaWidgetContents{background-color:#14274E;}</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QSplitter" name="splitter_2">
+         <property name="styleSheet">
+          <string notr="true">background-color:#14274E;</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <widget class="QSplitter" name="splitter">
+          <property name="styleSheet">
+           <string notr="true">background-color:#14274E;</string>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="styleSheet">
+            <string notr="true">font: 75 10pt &quot;微软雅黑&quot;;
+color:white;</string>
+           </property>
+           <property name="title">
+            <string>模型姿态</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <widget class="GLWidget" name="openGLWidget">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="styleSheet">
+            <string notr="true">font: 75 10pt &quot;微软雅黑&quot;;
+color:white;</string>
+           </property>
+           <property name="title">
+            <string>飞机航表</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QFrame" name="frame10">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>9999</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame{background-color:#394867;}</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="1" column="3" rowspan="3" colspan="2">
+                <widget class="GaugePlane" name="gaugePlane" native="true">
+                 <property name="bgColor" stdset="0">
+                  <color alpha="150">
+                   <red>241</red>
+                   <green>246</green>
+                   <blue>249</blue>
+                  </color>
+                 </property>
+                 <property name="planeColor" stdset="0">
+                  <color>
+                   <red>155</red>
+                   <green>164</green>
+                   <blue>180</blue>
+                  </color>
+                 </property>
+                 <property name="scaleColor" stdset="0">
+                  <color>
+                   <red>20</red>
+                   <green>39</green>
+                   <blue>78</blue>
+                  </color>
+                 </property>
+                 <property name="lineColor" stdset="0">
+                  <color>
+                   <red>20</red>
+                   <green>39</green>
+                   <blue>78</blue>
+                  </color>
+                 </property>
+                 <property name="textColor" stdset="0">
+                  <color>
+                   <red>57</red>
+                   <green>72</green>
+                   <blue>103</blue>
+                  </color>
+                 </property>
+                 <property name="handleColor" stdset="0">
+                  <color>
+                   <red>57</red>
+                   <green>72</green>
+                   <blue>103</blue>
+                  </color>
+                 </property>
+                 <property name="degValue" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="rollValue" stdset="0">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2" rowspan="4">
+                <widget class="RulerBar" name="rulerBar" native="true">
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="longStep" stdset="0">
+                  <number>50</number>
+                 </property>
+                 <property name="shortStep" stdset="0">
+                  <number>10</number>
+                 </property>
+                 <property name="bgColorStart" stdset="0">
+                  <color>
+                   <red>57</red>
+                   <green>72</green>
+                   <blue>103</blue>
+                  </color>
+                 </property>
+                 <property name="bgColorEnd" stdset="0">
+                  <color>
+                   <red>20</red>
+                   <green>39</green>
+                   <blue>78</blue>
+                  </color>
+                 </property>
+                 <property name="barBgColor" stdset="0">
+                  <color>
+                   <red>241</red>
+                   <green>246</green>
+                   <blue>249</blue>
+                  </color>
+                 </property>
+                 <property name="barColor" stdset="0">
+                  <color>
+                   <red>140</red>
+                   <green>208</green>
+                   <blue>248</blue>
+                  </color>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3" colspan="2">
+                <widget class="RulerScale" name="rulerScale" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="minValue" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="scaleColor" stdset="0">
+                  <color>
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </property>
+                 <property name="scaleNumColor" stdset="0">
+                  <color>
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </property>
+                 <property name="pointerColor" stdset="0">
+                  <color>
+                   <red>255</red>
+                   <green>34</green>
+                   <blue>37</blue>
+                  </color>
+                 </property>
+                 <property name="borderColor" stdset="0">
+                  <color>
+                   <red>20</red>
+                   <green>39</green>
+                   <blue>78</blue>
+                  </color>
+                 </property>
+                 <property name="coverColor" stdset="0">
+                  <color>
+                   <red>20</red>
+                   <green>39</green>
+                   <blue>78</blue>
+                  </color>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="styleSheet">
+           <string notr="true">font: 75 10pt &quot;微软雅黑&quot;;
+color:white;</string>
+          </property>
+          <property name="title">
+           <string>状态数据</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QFrame" name="frame5">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>9999</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame{background-color:#394867;}</string>
+             </property>
+             <property name="lineWidth">
+              <number>1</number>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+background-color:#394867;}</string>
+                </property>
+                <property name="text">
+                 <string>ROL</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="2">
+               <widget class="QProgressBar" name="pgb_ROL">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>999999</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QProgressBar{background-color: #8CD0F8;
+font: 10pt &quot;微软雅黑&quot;;
+border-width: 12px;
+border-radius: 4px;
+color: white;
+text-align:right;/*文本位置*/
+}
+QProgressBar::chunk {
+background-color: #14274E;
+width: 10px;               /* 设置进度块宽度*/
+margin: 0.5px;             /* 设置进度块外边距*/
+	
+}
+</string>
+                </property>
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QProgressBar" name="pgb_PIT">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>999999</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QProgressBar{background-color: #8CD0F8;
+font: 10pt &quot;微软雅黑&quot;;
+border-width: 12px;
+border-radius: 4px;
+color: white;
+text-align:right;/*文本位置*/
+}
+QProgressBar::chunk {
+background-color: #14274E;
+width: 10px;               /* 设置进度块宽度*/
+margin: 0.5px;             /* 设置进度块外边距*/
+	
+}
+</string>
+                </property>
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_84">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+background-color:#394867;}</string>
+                </property>
+                <property name="text">
+                 <string>PIT</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QProgressBar" name="pgb_THR">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>999999</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QProgressBar{background-color: #8CD0F8;
+font: 10pt &quot;微软雅黑&quot;;
+border-width: 12px;
+border-radius: 4px;
+color: white;
+text-align:right;/*文本位置*/
+}
+QProgressBar::chunk {
+background-color: #14274E;
+width: 10px;               /* 设置进度块宽度*/
+margin: 0.5px;             /* 设置进度块外边距*/
+	
+}
+</string>
+                </property>
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+background-color:#394867;}</string>
+                </property>
+                <property name="text">
+                 <string>THR</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+background-color:#394867;}</string>
+                </property>
+                <property name="text">
+                 <string>YAW</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QProgressBar" name="pgb_YAW">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>999999</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QProgressBar{background-color: #8CD0F8;
+font: 10pt &quot;微软雅黑&quot;;
+border-width: 12px;
+border-radius: 4px;
+color: white;
+text-align:right;/*文本位置*/
+}
+QProgressBar::chunk {
+background-color: #14274E;
+width: 10px;               /* 设置进度块宽度*/
+margin: 0.5px;             /* 设置进度块外边距*/
+	
+}
+</string>
+                </property>
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="label_63">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>29</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#label_63{
+font: 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+border-left: 5px solid #9BA4B4;
+background-color: #394867;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>RCDATA</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame9">
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>9999</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame{background-color:#394867;}</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="8" column="2">
+               <widget class="QLabel" name="label_12">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>SPEED_ROL</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QLabel" name="label_67">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>ALT_CSB</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLabel" name="lb_MAG_Y">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="3">
+               <widget class="QLabel" name="lb_SPEED_PIT">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="lb_MAG_X">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="3">
+               <widget class="QLabel" name="lb_MAG_Z">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="2">
+               <widget class="QLabel" name="label_5">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>SPEED_Z</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="3">
+               <widget class="QLabel" name="lb_ALT_BAR">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="4">
+               <widget class="QLabel" name="label_35">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>29</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#label_35{
+font: 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+border-left: 5px solid #9BA4B4;
+background-color: #394867;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>SENSER</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="lb_ACC_Z">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="label_44">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GYRO_Z</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QLabel" name="label_3">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>MAG_Z</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="3">
+               <widget class="QLabel" name="lb_SPEED_ROL">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="label_43">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GYRO_Y</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_41">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GYRO_X</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="3">
+               <widget class="QLabel" name="lb_SPEED_Z">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLabel" name="lb_GYRO_X">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_40">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>ACC_X</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_2">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>MAG_Y</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_36">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>ACC_Y</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="label">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>MAG_X</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLabel" name="lb_GYRO_Y">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="1">
+               <widget class="QLabel" name="lb_GYRO_Z">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLabel" name="lb_ALT_CSB">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="lb_ACC_X">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="2">
+               <widget class="QLabel" name="label_37">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>ALT_BAR</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="lb_ACC_Y">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QLabel" name="label_4">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>SPEED_PIT</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_34">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>ACC_Z</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>9999</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame{background-color:#394867;}</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="5" column="1">
+               <widget class="QLabel" name="lb_FLY_MODEL">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_50">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>飞行模式 FLY_MODEL</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_54">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>横滚角 ROL</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="lb_ALT_USE">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="2">
+               <widget class="QLabel" name="label_62">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>29</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#label_62{
+font: 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+border-left: 5px solid #9BA4B4;
+background-color: #394867;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>STATUS</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_57">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>离地高度 ALT_USE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_59">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>ARMED</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_60">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>偏航角 YAW</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="lb_YAW">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_55">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>俯仰角 PIT</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="lb_PIT">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLabel" name="lb_ARMED">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="lb_ROL">
+                <property name="styleSheet">
+                 <string notr="true">QLabel{font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame7">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>9999</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame{background-color:#394867;}</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="6" column="1">
+               <widget class="QLabel" name="lb_GPS_SPEEDE">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="lb_GPS_HEIGH">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_17">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GPS 纬度（°）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_19">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GPS 海拔高度（m）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="QLabel" name="label_31">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>29</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>29</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#label_31{
+font: 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+border-left: 5px solid #9BA4B4;
+background-color: #394867;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>GPSDATA</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_23">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GPS 速度 N （cm/s）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="label_26">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>卫星数量</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLabel" name="lb_GPS_SPEEDN">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_25">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GPS 速度 E （cm/s）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="lb_GPS_LONGITUDE">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLabel" name="lb_GPS_FPNUM">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="lb_GPS_LATITUDE">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_18">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>GPS 经度（°）</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="label_27">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>回航角</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="1">
+               <widget class="QLabel" name="lb_GPS_Deg">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);</string>
+                </property>
+                <property name="text">
+                 <string>0.00</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GaugePlane</class>
+   <extends>QWidget</extends>
+   <header>gaugeplane.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RulerBar</class>
+   <extends>QWidget</extends>
+   <header>rulerbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RulerScale</class>
+   <extends>QWidget</extends>
+   <header>rulerscale.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>qopengl/glwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

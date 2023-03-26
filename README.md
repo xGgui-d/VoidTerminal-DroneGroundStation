@@ -169,14 +169,12 @@ QUC自定义控件：http://www.qtcontrol.cn/
 ## 五、版权说明
 
 * 作者：xGgui
-
 * 邮箱：1723172785@qq.com
-
 * 联系：
   * qq:1723172785    
   * vx:thedragonjiang666
-
-* 该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](
+* 该项目签署了MIT 授权许可
+* 不得用于商业用途
 
 ## 六、鸣谢
 

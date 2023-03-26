@@ -446,10 +446,10 @@ void MainWidget::on_tbtn_lockModel_toggled(bool checked)
     if(checked)
     {
         //解锁模型
-        ui->tbtn_lockModel->setIcon(QIcon(":/img/lock.png"));
+        ui->tbtn_lockModel->setIcon(QIcon(":/img/imgs/lock.png"));
         m_flightStatus->setIsLock(false);
     }else {
-        ui->tbtn_lockModel->setIcon(QIcon(":/img/unlock.png"));
+        ui->tbtn_lockModel->setIcon(QIcon(":/img/imgs/unlock.png"));
         m_flightStatus->setIsLock(true);
     }
 

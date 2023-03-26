@@ -45,7 +45,7 @@
 
 ### 4.1 基本运行
 
-* 下载安装qt5.13并配置好环境，推荐从这里下载qt5.13 https://download.qt.io/archive/qt/5.13/5.13.0/，安装过程中编译器勾选mingw32。
+* 下载安装qt5.13并配置好环境，推荐从这里下载qt5.13 https://download.qt.io/archive/qt/5.13/5.13.0/ 安装过程中编译器勾选mingw32。
 * 将qwt，quc，QtXlsxWriter动态链接库的路径导入项目文件.pro，这里提供前两个插件的[教程](doc/quc和qwt插件的安装.docx) 。xlsx库的安装可自行上网搜。
 * 编译构建运行。
 

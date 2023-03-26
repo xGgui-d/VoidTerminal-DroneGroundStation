@@ -509,7 +509,7 @@ width:150px;
 font: 10pt &quot;微软雅黑&quot;;
 }
 QTabBar::close-button{
-	image:url(:/img/close.png);
+	image:url(:/img/imgs/close.png);
 	background-color:#14274E;
 }
 QTabBar::close-button:hover{

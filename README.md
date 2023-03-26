@@ -1,6 +1,6 @@
 # 虚空终端——飞行器地面站
 
-![p](https://img.shields.io/github/forks/xGgui-d/VoidTerminal-DroneGroundStation?style=plastic)![p](https://img.shields.io/github/stars/xGgui-d?color=yellow&style=plastic)![p](https://img.shields.io/github/license/xGgui-d/voidTerminal-DroneGroundStation)
+![p](https://img.shields.io/github/forks/xGgui-d/VoidTerminal-DroneGroundStation?style=plastic)![p](https://img.shields.io/github/stars/xGgui-d?color=yellow&style=plastic)![p](https://img.shields.io/github/license/xGgui-d/VoidTerminal-DroneGroundStation?style=plastic)
 
 ## 一、项目背景
 

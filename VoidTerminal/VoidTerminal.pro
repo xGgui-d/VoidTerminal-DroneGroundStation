@@ -127,18 +127,21 @@ RESOURCES += \
 
 
 
-win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwt
 
-INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
-DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
-
-win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lquc
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lquc
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqucd
 
 INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
 DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
 
-win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lQt5Xlsx
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwtd
+
+INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
+DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lQt5Xlsx
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lQt5Xlsxd
 
 INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
 DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
-

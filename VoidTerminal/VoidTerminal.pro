@@ -120,26 +120,25 @@ DISTFILES +=
 win32: LIBS += -LD:/application/qt5.13/5.13.0/mingw73_32/lib/ -lfreeglut
 win32: LIBS += -lOpenGL32
 win32: LIBS += -lGlU32
-#quc插件
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lquc
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqucd
 
-INCLUDEPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
-DEPENDPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
-#qwt插件
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwt
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwtd
-
-INCLUDEPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
-DEPENDPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
-
-#xlsx插件
-win32: LIBS += -L$$PWD/../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lQt5Xlsx
-
-INCLUDEPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
-DEPENDPATH += $$PWD/../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
 
 RESOURCES += \
     res.qrc
 
+
+
+win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lqwt
+
+INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
+DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtqwt
+
+win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lquc
+
+INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
+DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/Qtquc
+
+win32: LIBS += -L$$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/lib/ -lQt5Xlsx
+
+INCLUDEPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
+DEPENDPATH += $$PWD/../../../../application/qt5.13/5.13.0/mingw73_32/include/QtXlsx
 

@@ -68,7 +68,7 @@ private slots:
     void on_btn_debugParameter_clicked();
     void on_btn_dataCelibration_clicked();
     void on_btn_refresh_clicked();
-    void on_btn_openSendAndRec_clicked();
+
     void on_btn_checkcalculator_clicked();
     void on_tbtn_expend_toggled(bool checked);
     void on_tbtn_expend_2_toggled(bool checked);
@@ -81,8 +81,9 @@ private slots:
     void on_pushButton_8_clicked();
     void on_tbtn_skin_clicked();
     void on_tbtn_clearBuff_clicked();
-
     void on_tbtn_config_clicked();
+
+    void on_btn_openSendAndRec_toggled(bool checked);
 
 private:
     Ui::MainWidget *ui;

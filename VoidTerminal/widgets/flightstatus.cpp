@@ -6,7 +6,7 @@
 
 FlightStatus::FlightStatus(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::FlightStatus)
+    ui(new Ui::FlightStatus),m_isLock(true)
 {
     ui->setupUi(this);
 

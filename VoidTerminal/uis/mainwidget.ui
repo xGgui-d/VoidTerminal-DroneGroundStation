@@ -117,32 +117,6 @@ color: rgb(255,255,255);
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="btn_dataCelibration">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{
-background-color: #9BA4B4;
-font: 75 12pt &quot;微软雅黑&quot;;
-color: rgb(255,255,255);
-}</string>
-          </property>
-          <property name="text">
-           <string>数据校准</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="btn_debugParameter">
           <property name="minimumSize">
            <size>
@@ -165,6 +139,32 @@ color: rgb(255,255,255);
           </property>
           <property name="text">
            <string>调试参数</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_dataCelibration">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: #9BA4B4;
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(255,255,255);
+}</string>
+          </property>
+          <property name="text">
+           <string>数据校准</string>
           </property>
          </widget>
         </item>
@@ -255,6 +255,9 @@ color: rgb(255,255,255);
              <iconset resource="../res.qrc">
               <normaloff>:/img/imgs/sendAndRec.png</normaloff>:/img/imgs/sendAndRec.png</iconset>
             </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item row="1" column="0">
@@ -300,8 +303,8 @@ color: rgb(255,255,255);
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
-              <height>40</height>
+              <width>9999</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -329,8 +332,8 @@ color: rgb(255,255,255);
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
-              <height>40</height>
+              <width>9999</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -358,8 +361,8 @@ color: rgb(255,255,255);
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
-              <height>40</height>
+              <width>9999</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -387,8 +390,8 @@ color: rgb(255,255,255);
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
-              <height>40</height>
+              <width>9999</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -416,8 +419,8 @@ color: rgb(255,255,255);
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
-              <height>40</height>
+              <width>9999</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -441,7 +444,7 @@ color: rgb(255,255,255);
       <widget class="QTextBrowser" name="tb_serialPortData">
        <property name="maximumSize">
         <size>
-         <width>300</width>
+         <width>16777215</width>
          <height>16777215</height>
         </size>
        </property>
@@ -1048,7 +1051,8 @@ font: 75 9pt &quot;微软雅黑&quot;;
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:white;</string>
+         <string notr="true">color:white;
+background-color:#9BA4B4;</string>
         </property>
         <property name="text">
          <string>RX：</string>
@@ -1088,7 +1092,8 @@ font: 75 8pt &quot;微软雅黑&quot;;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:white;</string>
+         <string notr="true">color:white;
+background-color:#9BA4B4;</string>
         </property>
         <property name="text">
          <string>TX：</string>
@@ -1128,7 +1133,8 @@ font: 75 8pt &quot;微软雅黑&quot;;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:white;</string>
+         <string notr="true">color:white;
+background-color:#9BA4B4;</string>
         </property>
         <property name="text">
          <string>错误帧：</string>
@@ -1161,6 +1167,10 @@ font: 75 8pt &quot;微软雅黑&quot;;</string>
       </item>
       <item>
        <widget class="QToolButton" name="tbtn_clearBuff">
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:#9BA4B4;</string>
+        </property>
         <property name="text">
          <string>...</string>
         </property>

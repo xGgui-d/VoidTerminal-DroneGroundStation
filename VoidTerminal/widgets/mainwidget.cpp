@@ -62,7 +62,8 @@ MainWidget::MainWidget(QWidget *parent) :
     ui->tabBar->addTab(m_waveAnalysis,"波形分析");
     ui->tabBar->addTab(m_debugParameter,"调试参数");
     ui->tabBar->addTab(m_dataCalibration,"数据校准");
-    ui->tabBar->setTabsClosable(true);
+    ui->tabBar->setCurrentIndex(0);
+
     ui->tabBar->setMovable(true);
     //初始化收发tab样式
     ui->tabSendAndRec->setStyleSheet("QTabBar::tab{color:#14274E;width:100px;font: 75 10pt \"微软雅黑\";}"
@@ -92,16 +93,18 @@ MainWidget::MainWidget(QWidget *parent) :
     ui->splitter_3->setHandleWidth(3);
     ui->splitter_4->setHandleWidth(3);
     //初始化分割器的比例 3是收发上下,2是主与右,4是主与左,1是左的上下
+    ui->splitter_1->setSizes(QList<int>()<<200<<500);
     ui->splitter_2->setSizes(QList<int>()<<1<<0);
     ui->splitter_3->setSizes(QList<int>()<<1<<0);
+    ui->gridFrame->setVisible(false);
     ui->splitter_4->setSizes(QList<int>()<<10<<30000);
-    ui->splitter_4->setChildrenCollapsible(false);//过窄不可隐藏
 
     //隐藏右边显示框
     ui->te_protocolData->hide();
     //设置右边显示框的最大行数
-    ui->te_protocolData->document()->setMaximumBlockCount(1000);
-
+    ui->te_protocolData->document()->setMaximumBlockCount(500);
+    //隐藏基本收发
+    ui->tabSendAndRec->hide();
 
     //初始化timer
     m_timer= new QTimer(this);
@@ -339,7 +342,8 @@ void MainWidget::on_tabBar_tabCloseRequested(int index)
 //打开tabBar
 void MainWidget::on_btn_flightStatus_clicked()
 {
-    ui->tabBar->insertTab(0,m_flightStatus,"飞行状态");
+
+    ui->tabBar->insertTab(0,m_flightStatus,"飞控状态");
     ui->tabBar->setCurrentIndex(0);
 }
 
@@ -487,36 +491,37 @@ void MainWidget::on_btn_checkcalculator_clicked()
 }
 
 //打开基本收发
-static bool isExpendSendAndRec=false;
-void MainWidget::on_btn_openSendAndRec_clicked()
+void MainWidget::on_btn_openSendAndRec_toggled(bool checked)
 {
-    if(!isExpendSendAndRec)
+    if(checked)
     {
-        ui->splitter_3->setSizes(QList<int>()<<0<<1);
-        isExpendSendAndRec=true;
+        ui->tabSendAndRec->show();
+        ui->splitter_3->setSizes(QList<int>()<<0<<1);//展开
     }else
     {
-        ui->splitter_3->setSizes(QList<int>()<<1<<0);
-        isExpendSendAndRec=false;
+        ui->splitter_3->setSizes(QList<int>()<<1<<0);//隐藏
+        ui->tabSendAndRec->hide();
     }
 }
+
+
 
 //展开右边的协议数据显示
 void MainWidget::on_tbtn_expend_toggled(bool checked)
 {
     if(checked)
     {
-        // ui->splitter_2->setEnabled(true);//设置可拖动
-        ui->splitter_2->setChildrenCollapsible(false); //过窄不可隐藏
+        ui->splitter_2->setChildrenCollapsible(false);
         ui->splitter_2->setSizes(QList<int>()<<3000<<500); //展开
+        ui->gridFrame->setVisible(true);
         ui->te_protocolData->show();
     }
     else
     {
-        ui->splitter_2->setChildrenCollapsible(true); //过窄可隐藏
+        ui->splitter_2->setChildrenCollapsible(true);
         ui->te_protocolData->hide();
         ui->splitter_2->setSizes(QList<int>()<<1<<0); //隐藏
-        // ui->splitter_2->setEnabled(false);//设置不可拖动
+        ui->gridFrame->setVisible(false);
     }
 
 }
@@ -524,16 +529,16 @@ void MainWidget::on_tbtn_expend_toggled(bool checked)
 //展开左边的logo和功能信息
 void MainWidget::on_tbtn_expend_2_toggled(bool checked)
 {
-    qDebug()<<checked<<endl;
+
     if(checked)
     {
-        ui->splitter_4->setChildrenCollapsible(false); //过窄不可隐藏
+        ui->splitter_1->setVisible(true);
         ui->splitter_4->setSizes(QList<int>()<<10<<30000);//展开
     }
     else
     {
-        ui->splitter_4->setChildrenCollapsible(true); //过窄可隐藏
         ui->splitter_4->setSizes(QList<int>()<<0<<1); //隐藏
+        ui->splitter_1->setVisible(false);
     }
 }
 
@@ -593,4 +598,5 @@ void MainWidget::on_tbtn_clearBuff_clicked()
     alRecNum=0;
     errorNum=0;
 }
+
 

@@ -79,7 +79,7 @@ SendAndReceive::SendAndReceive(QWidget *parent) :
     ui->cb_checkBit->addItems(parityList);
     ui->cb_stopBit->addItems(stopBitsList);
     ui->cb_dataBit->addItems(dataNumList);
-    ui->cb_portBaud->setCurrentIndex(15);//设置500000为默认选项  15
+    ui->cb_portBaud->setCurrentIndex(10);//设置115200为默认选项  10
     slot_serialConfigUpdate(1);
 
     //设置最大保留1000行文本

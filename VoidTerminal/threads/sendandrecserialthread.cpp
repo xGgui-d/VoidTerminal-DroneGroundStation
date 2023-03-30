@@ -92,7 +92,9 @@ void SendAndRecSerialThread::slot_openSendAndRecSerial(int id)
 
     emit sig_sendSerialPortProcessInfo("参数列表读取成功!参数数量："+QString::number(infoSum),1);
     emit sig_sendSerialPortProcessInfo("开始连接串口...",0);
+    qDebug()<<"1"<<endl;
     bool isSuccess=m_ports[id]->open(QIODevice::ReadWrite);
+    qDebug()<<"2"<<endl;
     emit sig_openSuccess(isSuccess,id);
     if(isSuccess) emit sig_sendSerialPortProcessInfo("连接打开成功!自动读取设备信息",2);
     else {emit sig_sendSerialPortProcessInfo("连接打开失败，请检查重试",3);return;}

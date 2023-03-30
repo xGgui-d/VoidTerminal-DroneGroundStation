@@ -22,10 +22,8 @@ SendAndReceive::SendAndReceive(QWidget *parent) :
     m_id=ID++;
 
     //初始化radiobutton
-    ui->rbtn_rec_ASCII->setChecked(false);
-    ui->rbtn_rec_HEX->setChecked(true);
-    ui->rbtn_send_ASCII->setChecked(false);
-    ui->rbtn_send_HEX->setChecked(true);
+    ui->rbtn_rec_ASCII->setChecked(true);
+    ui->rbtn_send_ASCII->setChecked(true);
 
     //初始化spinbox
     ui->sb_timeSet->setMinimum(1);

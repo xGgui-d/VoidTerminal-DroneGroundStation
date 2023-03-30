@@ -85,6 +85,8 @@ private slots:
 
     void on_btn_openSendAndRec_toggled(bool checked);
 
+    void on_btn_title_clicked();
+
 private:
     Ui::MainWidget *ui;
     FlightStatus *m_flightStatus;

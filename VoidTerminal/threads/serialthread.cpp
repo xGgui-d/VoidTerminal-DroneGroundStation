@@ -50,6 +50,7 @@ void SerialThread::slot_openSerial()
     int infoSum=1;
     emit sig_sendSerialPortProcessInfo("开始读取"+serialConfig.serialPortNum+"的参数列表...",0);
     if(m_port->isOpen())//如果串口已打开，立刻关闭
+        m_port->clear();
         m_port->close();
 
     m_port->setPortName(serialConfig.serialPortNum);
@@ -228,6 +229,7 @@ void SerialThread::dataSort(uint8_t *rxBuffer,uint8_t lastIndex)
 
     }else if(*(rxBuffer+2)==0X02)
     {
+
         ACC_X=static_cast<int16_t>(*(rxBuffer+4)<<8)|*(rxBuffer+5);
         ACC_Y=static_cast<int16_t>(*(rxBuffer+6)<<8)|*(rxBuffer+7);
         ACC_Z=static_cast<int16_t>(*(rxBuffer+8)<<8)|*(rxBuffer+9);

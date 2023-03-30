@@ -599,4 +599,8 @@ void MainWidget::on_tbtn_clearBuff_clicked()
     errorNum=0;
 }
 
-
+//点击标题打开我的github
+void MainWidget::on_btn_title_clicked()
+{
+    QDesktopServices::openUrl(QUrl(QString("https://github.com/xGgui-d/VoidTerminal-DroneGroundStation")));
+}

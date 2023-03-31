@@ -12,6 +12,7 @@ debug/mytabbar.o
 debug/mytabpage.o
 debug/mytabpopup.o
 debug/mytabwidget.o
+debug/datasortthread.o
 debug/sendandrecserialthread.o
 debug/serialthread.o
 debug/datacalibration.o
@@ -32,6 +33,7 @@ debug/moc_mytabbar.o
 debug/moc_mytabpage.o
 debug/moc_mytabpopup.o
 debug/moc_mytabwidget.o
+debug/moc_datasortthread.o
 debug/moc_sendandrecserialthread.o
 debug/moc_serialthread.o
 debug/moc_datacalibration.o

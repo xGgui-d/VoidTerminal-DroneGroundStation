@@ -3,7 +3,7 @@
 #include <QDateTime>
 
 bool enableBtn_PID=true;
-int delay_PID=300;
+int delay_PID=5000;
 DebugParameter::DebugParameter(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DebugParameter)

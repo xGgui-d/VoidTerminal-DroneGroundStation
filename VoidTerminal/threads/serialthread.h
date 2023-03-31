@@ -48,8 +48,6 @@ private:
 
     //将数据通过协议解析
     void dataParse(uint8_t data);
-    //将数据根据功能区分类
-    void dataSort(uint8_t *rxBuffer,uint8_t lastIndex);
     //将数据放入波形容器
     void putDataToWave();
     //延时
@@ -65,8 +63,8 @@ signals:
     //发送校准过程信息
     void sig_sendCalibrationInfo(QString str,int color);
 
-    //发送更新pid的spinbox信号
-    void sig_updateSpinBoxPID();
+    //发送数据分类信号
+    void sig_dataSort(uint8_t *rxBuffer);
 
     void sig_sendPortWriteDataInfo(QByteArray data);
     void sig_sendPortReadDataInfo(QByteArray data);

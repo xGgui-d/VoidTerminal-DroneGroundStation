@@ -48,6 +48,7 @@ public:
     void serialInitUI();
     void threadInit01();
     void threadInit02();
+    void threadInit03();
 
     ~MainWidget();
 signals:
@@ -109,6 +110,8 @@ private:
     QThread *m_thread_1;
     //子线程_2
     QThread *m_thread_2;
+    //子线程-3
+    QThread *m_thread_3;
 };
 
 #endif // MAINWIDGET_H

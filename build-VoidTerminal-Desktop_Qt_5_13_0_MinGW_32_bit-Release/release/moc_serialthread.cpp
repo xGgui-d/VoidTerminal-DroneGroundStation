@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SerialThread_t {
-    QByteArrayData data[41];
-    char stringdata0[627];
+    QByteArrayData data[43];
+    char stringdata0[637];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,46 +42,48 @@ QT_MOC_LITERAL(5, 69, 3), // "str"
 QT_MOC_LITERAL(6, 73, 5), // "color"
 QT_MOC_LITERAL(7, 79, 26), // "sig_sendDebugParameterInfo"
 QT_MOC_LITERAL(8, 106, 23), // "sig_sendCalibrationInfo"
-QT_MOC_LITERAL(9, 130, 20), // "sig_updateSpinBoxPID"
-QT_MOC_LITERAL(10, 151, 25), // "sig_sendPortWriteDataInfo"
-QT_MOC_LITERAL(11, 177, 4), // "data"
-QT_MOC_LITERAL(12, 182, 24), // "sig_sendPortReadDataInfo"
-QT_MOC_LITERAL(13, 207, 22), // "solt_doDataReceiveWork"
-QT_MOC_LITERAL(14, 230, 13), // "slot_writePID"
-QT_MOC_LITERAL(15, 244, 18), // "QVector<uint16_t>*"
-QT_MOC_LITERAL(16, 263, 2), // "kp"
-QT_MOC_LITERAL(17, 266, 2), // "ki"
-QT_MOC_LITERAL(18, 269, 2), // "kd"
-QT_MOC_LITERAL(19, 272, 12), // "slot_readPID"
-QT_MOC_LITERAL(20, 285, 19), // "slot_recoverDefault"
-QT_MOC_LITERAL(21, 305, 12), // "slot_savePID"
-QT_MOC_LITERAL(22, 318, 12), // "slot_cal_acc"
-QT_MOC_LITERAL(23, 331, 13), // "slot_cal_gyro"
-QT_MOC_LITERAL(24, 345, 13), // "slot_cal_baro"
-QT_MOC_LITERAL(25, 359, 12), // "slot_cal_mag"
-QT_MOC_LITERAL(26, 372, 12), // "slot_cal_alt"
-QT_MOC_LITERAL(27, 385, 16), // "slot_cal_inertia"
-QT_MOC_LITERAL(28, 402, 15), // "slot_cal_face01"
-QT_MOC_LITERAL(29, 418, 15), // "slot_cal_face02"
-QT_MOC_LITERAL(30, 434, 15), // "slot_cal_face03"
-QT_MOC_LITERAL(31, 450, 15), // "slot_cal_face04"
-QT_MOC_LITERAL(32, 466, 15), // "slot_cal_face05"
-QT_MOC_LITERAL(33, 482, 15), // "slot_cal_face06"
-QT_MOC_LITERAL(34, 498, 17), // "slot_cal_faceExit"
-QT_MOC_LITERAL(35, 516, 17), // "slot_read_flowSet"
-QT_MOC_LITERAL(36, 534, 18), // "slot_read_digitSet"
-QT_MOC_LITERAL(37, 553, 21), // "slot_read_positionSet"
-QT_MOC_LITERAL(38, 575, 17), // "slot_read_version"
-QT_MOC_LITERAL(39, 593, 15), // "slot_openSerial"
-QT_MOC_LITERAL(40, 609, 17) // "slot_close_serial"
+QT_MOC_LITERAL(9, 130, 12), // "sig_dataSort"
+QT_MOC_LITERAL(10, 143, 8), // "uint8_t*"
+QT_MOC_LITERAL(11, 152, 8), // "rxBuffer"
+QT_MOC_LITERAL(12, 161, 25), // "sig_sendPortWriteDataInfo"
+QT_MOC_LITERAL(13, 187, 4), // "data"
+QT_MOC_LITERAL(14, 192, 24), // "sig_sendPortReadDataInfo"
+QT_MOC_LITERAL(15, 217, 22), // "solt_doDataReceiveWork"
+QT_MOC_LITERAL(16, 240, 13), // "slot_writePID"
+QT_MOC_LITERAL(17, 254, 18), // "QVector<uint16_t>*"
+QT_MOC_LITERAL(18, 273, 2), // "kp"
+QT_MOC_LITERAL(19, 276, 2), // "ki"
+QT_MOC_LITERAL(20, 279, 2), // "kd"
+QT_MOC_LITERAL(21, 282, 12), // "slot_readPID"
+QT_MOC_LITERAL(22, 295, 19), // "slot_recoverDefault"
+QT_MOC_LITERAL(23, 315, 12), // "slot_savePID"
+QT_MOC_LITERAL(24, 328, 12), // "slot_cal_acc"
+QT_MOC_LITERAL(25, 341, 13), // "slot_cal_gyro"
+QT_MOC_LITERAL(26, 355, 13), // "slot_cal_baro"
+QT_MOC_LITERAL(27, 369, 12), // "slot_cal_mag"
+QT_MOC_LITERAL(28, 382, 12), // "slot_cal_alt"
+QT_MOC_LITERAL(29, 395, 16), // "slot_cal_inertia"
+QT_MOC_LITERAL(30, 412, 15), // "slot_cal_face01"
+QT_MOC_LITERAL(31, 428, 15), // "slot_cal_face02"
+QT_MOC_LITERAL(32, 444, 15), // "slot_cal_face03"
+QT_MOC_LITERAL(33, 460, 15), // "slot_cal_face04"
+QT_MOC_LITERAL(34, 476, 15), // "slot_cal_face05"
+QT_MOC_LITERAL(35, 492, 15), // "slot_cal_face06"
+QT_MOC_LITERAL(36, 508, 17), // "slot_cal_faceExit"
+QT_MOC_LITERAL(37, 526, 17), // "slot_read_flowSet"
+QT_MOC_LITERAL(38, 544, 18), // "slot_read_digitSet"
+QT_MOC_LITERAL(39, 563, 21), // "slot_read_positionSet"
+QT_MOC_LITERAL(40, 585, 17), // "slot_read_version"
+QT_MOC_LITERAL(41, 603, 15), // "slot_openSerial"
+QT_MOC_LITERAL(42, 619, 17) // "slot_close_serial"
 
     },
     "SerialThread\0sig_openPortSuccess\0\0"
     "flag\0sig_sendSerialPortProcessInfo\0"
     "str\0color\0sig_sendDebugParameterInfo\0"
-    "sig_sendCalibrationInfo\0sig_updateSpinBoxPID\0"
-    "sig_sendPortWriteDataInfo\0data\0"
-    "sig_sendPortReadDataInfo\0"
+    "sig_sendCalibrationInfo\0sig_dataSort\0"
+    "uint8_t*\0rxBuffer\0sig_sendPortWriteDataInfo\0"
+    "data\0sig_sendPortReadDataInfo\0"
     "solt_doDataReceiveWork\0slot_writePID\0"
     "QVector<uint16_t>*\0kp\0ki\0kd\0slot_readPID\0"
     "slot_recoverDefault\0slot_savePID\0"
@@ -115,15 +117,13 @@ static const uint qt_meta_data_SerialThread[] = {
        4,    2,  172,    2, 0x06 /* Public */,
        7,    2,  177,    2, 0x06 /* Public */,
        8,    2,  182,    2, 0x06 /* Public */,
-       9,    0,  187,    2, 0x06 /* Public */,
-      10,    1,  188,    2, 0x06 /* Public */,
-      12,    1,  191,    2, 0x06 /* Public */,
+       9,    1,  187,    2, 0x06 /* Public */,
+      12,    1,  190,    2, 0x06 /* Public */,
+      14,    1,  193,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    0,  194,    2, 0x0a /* Public */,
-      14,    3,  195,    2, 0x0a /* Public */,
-      19,    0,  202,    2, 0x0a /* Public */,
-      20,    0,  203,    2, 0x0a /* Public */,
+      15,    0,  196,    2, 0x0a /* Public */,
+      16,    3,  197,    2, 0x0a /* Public */,
       21,    0,  204,    2, 0x0a /* Public */,
       22,    0,  205,    2, 0x0a /* Public */,
       23,    0,  206,    2, 0x0a /* Public */,
@@ -144,19 +144,21 @@ static const uint qt_meta_data_SerialThread[] = {
       38,    0,  221,    2, 0x0a /* Public */,
       39,    0,  222,    2, 0x0a /* Public */,
       40,    0,  223,    2, 0x0a /* Public */,
+      41,    0,  224,    2, 0x0a /* Public */,
+      42,    0,  225,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    3,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    5,    6,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    5,    6,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    5,    6,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::QByteArray,   11,
-    QMetaType::Void, QMetaType::QByteArray,   11,
+    QMetaType::Void, 0x80000000 | 10,   11,
+    QMetaType::Void, QMetaType::QByteArray,   13,
+    QMetaType::Void, QMetaType::QByteArray,   13,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 15, 0x80000000 | 15, 0x80000000 | 15,   16,   17,   18,
+    QMetaType::Void, 0x80000000 | 17, 0x80000000 | 17, 0x80000000 | 17,   18,   19,   20,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -193,7 +195,7 @@ void SerialThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->sig_sendSerialPortProcessInfo((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 2: _t->sig_sendDebugParameterInfo((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 3: _t->sig_sendCalibrationInfo((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 4: _t->sig_updateSpinBoxPID(); break;
+        case 4: _t->sig_dataSort((*reinterpret_cast< uint8_t*(*)>(_a[1]))); break;
         case 5: _t->sig_sendPortWriteDataInfo((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         case 6: _t->sig_sendPortReadDataInfo((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         case 7: _t->solt_doDataReceiveWork(); break;
@@ -253,8 +255,8 @@ void SerialThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             }
         }
         {
-            using _t = void (SerialThread::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&SerialThread::sig_updateSpinBoxPID)) {
+            using _t = void (SerialThread::*)(uint8_t * );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&SerialThread::sig_dataSort)) {
                 *result = 4;
                 return;
             }
@@ -345,9 +347,10 @@ void SerialThread::sig_sendCalibrationInfo(QString _t1, int _t2)
 }
 
 // SIGNAL 4
-void SerialThread::sig_updateSpinBoxPID()
+void SerialThread::sig_dataSort(uint8_t * _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5

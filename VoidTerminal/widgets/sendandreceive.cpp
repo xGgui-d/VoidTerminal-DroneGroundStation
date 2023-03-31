@@ -9,7 +9,7 @@
 //存储各个串口配置的全局变量
 MultiSerialConfig multiSerialConfigs[MAX_PORT];
 //使用静态类成员来初始化各个对象的id
-int SendAndReceive::ID=0;
+int SendAndReceive::s_ID=0;
 
 SendAndReceive::SendAndReceive(QWidget *parent) :
     MyTabPage(parent),
@@ -19,13 +19,17 @@ SendAndReceive::SendAndReceive(QWidget *parent) :
 
     br=0;
     //初始化对象id
-    m_id=ID++;
+    m_id=s_ID++;
+    m_timeSendDelay=1000;
 
     //初始化radiobutton
     ui->rbtn_rec_ASCII->setChecked(true);
     ui->rbtn_send_ASCII->setChecked(true);
 
-    //初始化spinbox
+    //定时发送计时器
+    m_timer = new QTimer(this);
+    connect(m_timer, &QTimer::timeout, this, &SendAndReceive::on_btn_send_clicked);
+    //初始化修改延迟的spinbox
     ui->sb_timeSet->setMinimum(1);
     ui->sb_timeSet->setMaximum(100000);
     ui->sb_timeSet->setValue(1000);
@@ -81,7 +85,9 @@ SendAndReceive::SendAndReceive(QWidget *parent) :
     slot_serialConfigUpdate(1);
 
     //设置最大保留1000行文本
-    ui->te_rec->document()->setMaximumBlockCount(1000);
+    ui->te_rec->document()->setMaximumBlockCount(50000);
+
+
 }
 
 SendAndReceive::~SendAndReceive()
@@ -120,10 +126,10 @@ void SendAndReceive::slot_handleAlreadyRead(int id,QByteArray buff)
     //是否需要换行显示
     if(ui->cb_autoWrap->isChecked()&&ui->cb_showTime->isChecked())
     {
-        ui->te_rec->append(dateStr);
+        ui->te_rec->appendHtml(dateStr);
     }else if(ui->cb_autoWrap->isChecked())
     {
-        ui->te_rec->append(str);
+        ui->te_rec->appendHtml(str);
     }else
     {
         ui->te_rec->insertPlainText(str);
@@ -249,19 +255,17 @@ void SendAndReceive::on_rbtn_send_HEX_clicked()
 void SendAndReceive::on_cb_sendTimed_stateChanged(int)
 {
     if(ui->cb_sendTimed->isChecked())
-    {
-        m_timer = new QTimer(this);
-        connect(m_timer, SIGNAL(timeout()), this, SLOT(on_btn_send_clicked()));
-        QString period=ui->sb_timeSet->text();
-        int period_cnt=period.toInt();
-        m_timer->start(period_cnt);
-    }
+        m_timer->start(m_timeSendDelay);
     else
-    {
         m_timer->stop();
-        delete m_timer;
-    }
 }
+//修改延迟
+void SendAndReceive::on_sb_timeSet_valueChanged(int msec)
+{
+    m_timeSendDelay=msec;
+    m_timer->setInterval(m_timeSendDelay);
+}
+
 //点击按钮清空消息
 void SendAndReceive::on_btn_clear_clicked()
 {
@@ -312,3 +316,5 @@ QString SendAndReceive::getCorrectUnicode(const QByteArray &ba)
     }
     return text;
 }
+
+

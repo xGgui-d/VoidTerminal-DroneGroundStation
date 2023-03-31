@@ -17,12 +17,11 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -55,18 +54,18 @@ public:
     QToolButton *tbtn_skin;
     QToolButton *tbtn_gauge;
     QToolButton *tbtn_lockModel;
-    QTextBrowser *tb_serialPortData;
+    QPlainTextEdit *tb_serialPortData;
     QSplitter *splitter_3;
     QSplitter *splitter_2;
     QTabWidget *tabBar;
     QFrame *gridFrame;
     QGridLayout *gridLayout;
-    QTextEdit *te_protocolData;
     QPushButton *btn_start;
     QSpacerItem *horizontalSpacer;
     QPushButton *btn_stop;
     QPushButton *btn_clear;
     QSpacerItem *horizontalSpacer_2;
+    QPlainTextEdit *te_protocolData;
     MyTabWidget *tabSendAndRec;
     QFrame *frame;
     QHBoxLayout *horizontalLayout_2;
@@ -316,10 +315,10 @@ public:
         verticalLayout->addLayout(horizontalLayout);
 
         splitter_1->addWidget(verticalFrame);
-        tb_serialPortData = new QTextBrowser(splitter_1);
+        tb_serialPortData = new QPlainTextEdit(splitter_1);
         tb_serialPortData->setObjectName(QString::fromUtf8("tb_serialPortData"));
         tb_serialPortData->setMaximumSize(QSize(16777215, 16777215));
-        tb_serialPortData->setStyleSheet(QString::fromUtf8("QTextBrowser{background-color:#9BA4B4;}"));
+        tb_serialPortData->setStyleSheet(QString::fromUtf8("background-color:#9BA4B4;"));
         splitter_1->addWidget(tb_serialPortData);
         splitter_4->addWidget(splitter_1);
         splitter_3 = new QSplitter(splitter_4);
@@ -396,13 +395,6 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        te_protocolData = new QTextEdit(gridFrame);
-        te_protocolData->setObjectName(QString::fromUtf8("te_protocolData"));
-        te_protocolData->setMaximumSize(QSize(16777215, 16777215));
-        te_protocolData->setStyleSheet(QString::fromUtf8("background-color:#9BA4B4;"));
-
-        gridLayout->addWidget(te_protocolData, 1, 0, 1, 5);
-
         btn_start = new QPushButton(gridFrame);
         btn_start->setObjectName(QString::fromUtf8("btn_start"));
         btn_start->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -448,6 +440,13 @@ public:
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_2, 0, 4, 1, 1);
+
+        te_protocolData = new QPlainTextEdit(gridFrame);
+        te_protocolData->setObjectName(QString::fromUtf8("te_protocolData"));
+        te_protocolData->setMaximumSize(QSize(16777215, 16777215));
+        te_protocolData->setStyleSheet(QString::fromUtf8("background-color:#9BA4B4;"));
+
+        gridLayout->addWidget(te_protocolData, 1, 0, 1, 5);
 
         splitter_2->addWidget(gridFrame);
         splitter_3->addWidget(splitter_2);

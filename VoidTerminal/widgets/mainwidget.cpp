@@ -9,6 +9,7 @@
 #include "headparameter.h"
 #include "threads/sendandrecserialthread.h"
 #include "sendandreceive.h"
+#include <threads/datasortthread.h>
 
 /*
  * 主窗口界面，里面含有一个TabBarWidget主要用于把其他widget添加作为元素
@@ -18,14 +19,17 @@
 SerialConfig serialConfig;
 //是否展示右边消息
 bool showProtocolFlag=false;
-
+//三个子线程类
+static SerialThread *serialThread;
+static DataSortThread *dataSortThread;
+static SendAndRecSerialThread *sendAndRecSerialThread;
 
 MainWidget::MainWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget)
 {
     ui->setupUi(this);
-    //qDebug()<<"主线程id: "<<QThread::currentThreadId()<<endl;
+    // qDebug()<<"主线程id: "<<QThread::currentThreadId()<<endl;
 
     //设置图标
     this->setWindowIcon(QIcon(":/img/imgs/title.png"));
@@ -102,7 +106,7 @@ MainWidget::MainWidget(QWidget *parent) :
     //隐藏右边显示框
     ui->te_protocolData->hide();
     //设置右边显示框的最大行数
-    ui->te_protocolData->document()->setMaximumBlockCount(500);
+    ui->te_protocolData->document()->setMaximumBlockCount(50000);
     //隐藏基本收发
     ui->tabSendAndRec->hide();
 
@@ -120,6 +124,7 @@ MainWidget::MainWidget(QWidget *parent) :
     //初始化线程
     threadInit01();
     threadInit02();
+    threadInit03();
 }
 
 MainWidget::~MainWidget()
@@ -130,6 +135,9 @@ MainWidget::~MainWidget()
     // 退出串口2子线程2
     m_thread_2->quit();
     m_thread_2->wait();
+    // 退出串口2子线程2
+    m_thread_3->quit();
+    m_thread_3->wait();
 
     delete m_gauge;
     delete ui;
@@ -204,7 +212,7 @@ void MainWidget::slot_updateUI()
 void MainWidget::threadInit01()
 {
     m_thread_1 = new QThread();
-    SerialThread *serialThread = new SerialThread();
+    serialThread = new SerialThread();
     //连接串口连接过程信息
     connect(serialThread,&SerialThread::sig_sendSerialPortProcessInfo,this,&MainWidget::slot_handlePortProcessInfo);
 
@@ -218,8 +226,7 @@ void MainWidget::threadInit01()
     connect(m_debugParameter,&DebugParameter::sig_recoverDefaultPID,serialThread,&SerialThread::slot_recoverDefault);
     //连接保存PID命令
     connect(m_debugParameter,&DebugParameter::sig_savePID,serialThread,&SerialThread::slot_savePID);
-    //连接更新PIDSpinBox
-    connect(serialThread,&SerialThread::sig_updateSpinBoxPID,m_debugParameter,&DebugParameter::slot_updateSpinBoxPID);
+
 
     //连接校准过程信息
     connect(serialThread,&SerialThread::sig_sendCalibrationInfo,m_dataCalibration,&DataCalibration::slot_handleCalibrationInfo);
@@ -267,7 +274,7 @@ void MainWidget::threadInit01()
 void MainWidget::threadInit02()
 {
     m_thread_2 = new QThread();
-    SendAndRecSerialThread *sendAndRecSerialThread = new SendAndRecSerialThread();
+    sendAndRecSerialThread = new SendAndRecSerialThread();
     //连接串口连接过程信息
     connect(sendAndRecSerialThread,&SendAndRecSerialThread::sig_sendSerialPortProcessInfo,this,&MainWidget::slot_handlePortProcessInfo);
     //连接特定串口的打开与关闭
@@ -289,6 +296,26 @@ void MainWidget::threadInit02()
     // 开始运行子线程
     m_thread_2->start();
 }
+
+
+///初始化子线程03
+void MainWidget::threadInit03()
+{
+    m_thread_3 = new QThread();
+    dataSortThread = new DataSortThread();
+
+    qRegisterMetaType<uint8_t>("uint8_t");
+    connect(serialThread,&SerialThread::sig_dataSort,dataSortThread,&DataSortThread::slot_dataSort);
+    //连接更新PIDSpinBox
+    connect(dataSortThread,&DataSortThread::sig_updateSpinBoxPID,m_debugParameter,&DebugParameter::slot_updateSpinBoxPID);
+    // 将串口线程移入子线程
+    dataSortThread->moveToThread(m_thread_3);
+    // 线程结束，自动删除对象
+    connect(m_thread_3, &QThread::finished,dataSortThread, &QObject::deleteLater);
+    // 开始运行子线程
+    m_thread_3->start();
+}
+
 
 
 
@@ -403,7 +430,7 @@ void MainWidget::slot_handlePortProcessInfo(QString str,int color)
     default: colorStr="#FFFFFF";break;
     }
     str= "<font color=\"#394867\">" + currentDateStr + "</font>"+"<font color=\""+colorStr+"\">" + str + "</font>";
-    ui->tb_serialPortData->append(str);
+    ui->tb_serialPortData->appendHtml(str);
 
 }
 
@@ -422,7 +449,8 @@ void MainWidget::slot_handlePortReadDataInfo(QByteArray data)
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz:RX:] ");
     str= "<font color=\"#A66F46\">" + currentDateStr + "</font>"+"<font color=\"#F1F6F9\">" + str + "</font>";
 
-    ui->te_protocolData->append(str);
+    ui->te_protocolData->appendHtml(str);
+
 }
 
 //处理显示串口写的数据信息
@@ -440,7 +468,7 @@ void MainWidget::slot_handlePortWriteDataInfo(QByteArray data)
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz:TX:] ");
     str= "<font color=\"#324A75\">" + currentDateStr + "</font>"+"<font color=\"#F1F6F9\">" + str + "</font>";
 
-    ui->te_protocolData->append(str);
+    ui->te_protocolData->appendHtml(str);
 }
 
 
@@ -511,14 +539,14 @@ void MainWidget::on_tbtn_expend_toggled(bool checked)
 {
     if(checked)
     {
-        ui->splitter_2->setChildrenCollapsible(false);
+        //ui->splitter_2->setChildrenCollapsible(false);
         ui->splitter_2->setSizes(QList<int>()<<3000<<500); //展开
         ui->gridFrame->setVisible(true);
         ui->te_protocolData->show();
     }
     else
     {
-        ui->splitter_2->setChildrenCollapsible(true);
+       // ui->splitter_2->setChildrenCollapsible(true);
         ui->te_protocolData->hide();
         ui->splitter_2->setSizes(QList<int>()<<1<<0); //隐藏
         ui->gridFrame->setVisible(false);

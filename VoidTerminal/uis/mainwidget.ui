@@ -441,7 +441,7 @@ color: rgb(255,255,255);
         </item>
        </layout>
       </widget>
-      <widget class="QTextBrowser" name="tb_serialPortData">
+      <widget class="QPlainTextEdit" name="tb_serialPortData">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -449,7 +449,7 @@ color: rgb(255,255,255);
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QTextBrowser{background-color:#9BA4B4;}</string>
+        <string notr="true">background-color:#9BA4B4;</string>
        </property>
       </widget>
      </widget>
@@ -558,19 +558,6 @@ QTabWidget::pane{
          <string notr="true"/>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="1" column="0" colspan="5">
-          <widget class="QTextEdit" name="te_protocolData">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color:#9BA4B4;</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="btn_start">
            <property name="styleSheet">
@@ -653,6 +640,19 @@ color: rgb(255,255,255);
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="1" column="0" colspan="5">
+          <widget class="QPlainTextEdit" name="te_protocolData">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#9BA4B4;</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

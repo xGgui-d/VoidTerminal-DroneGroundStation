@@ -238,7 +238,7 @@ color:#F1F6F9;</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
-            <widget class="QTextEdit" name="te_rec">
+            <widget class="QPlainTextEdit" name="te_rec">
              <property name="styleSheet">
               <string notr="true">color:white;</string>
              </property>

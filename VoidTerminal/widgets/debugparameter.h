@@ -9,7 +9,7 @@
 #include "headparameter.h"
 
 //32位转8位
-#define BYTE0(dwTemp)       ( *( (char *)(&dwTemp)      ) )
+#define BYTE0(dwTemp)       ( *( (char *)(&dwTemp)   )  )
 #define BYTE1(dwTemp)       ( *( (char *)(&dwTemp) + 1) )
 #define BYTE2(dwTemp)       ( *( (char *)(&dwTemp) + 2) )
 #define BYTE3(dwTemp)       ( *( (char *)(&dwTemp) + 3) )

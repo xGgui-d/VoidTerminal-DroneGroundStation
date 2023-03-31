@@ -63,6 +63,7 @@ SOURCES += \
         myTabWidget/mytabpage.cpp \
         myTabWidget/mytabpopup.cpp \
         myTabWidget/mytabwidget.cpp \
+        threads/datasortthread.cpp \
         threads/sendandrecserialthread.cpp \
         threads/serialthread.cpp \
         widgets/datacalibration.cpp \
@@ -85,6 +86,7 @@ HEADERS += \
         myTabWidget/mytabpage.h \
         myTabWidget/mytabpopup.h \
         myTabWidget/mytabwidget.h \
+        threads/datasortthread.h \
         threads/sendandrecserialthread.h \
         threads/serialthread.h \
         widgets/datacalibration.h \

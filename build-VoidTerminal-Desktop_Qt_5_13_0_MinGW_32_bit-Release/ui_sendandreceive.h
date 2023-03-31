@@ -17,6 +17,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
@@ -51,7 +52,7 @@ public:
     QSplitter *splitter;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
-    QTextEdit *te_rec;
+    QPlainTextEdit *te_rec;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
     QComboBox *cb_historySend;
@@ -217,7 +218,7 @@ public:
 "color:#F1F6F9;"));
         gridLayout_2 = new QGridLayout(groupBox);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        te_rec = new QTextEdit(groupBox);
+        te_rec = new QPlainTextEdit(groupBox);
         te_rec->setObjectName(QString::fromUtf8("te_rec"));
         te_rec->setStyleSheet(QString::fromUtf8("color:white;"));
 

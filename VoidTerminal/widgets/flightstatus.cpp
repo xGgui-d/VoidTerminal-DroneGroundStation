@@ -20,8 +20,9 @@ FlightStatus::FlightStatus(QWidget *parent) :
     connect(this, &FlightStatus::sig_updateRotationY, ui->openGLWidget, &GLWidget::slot_setYRotation);
     connect(this, &FlightStatus::sig_updateRotationZ, ui->openGLWidget, &GLWidget::slot_setZRotation);
 
+    //模型窗口与航表比例
     ui->splitter->setSizes(QList<int>()<<10000<<17500);
-   // qDebug()<<"flightstatus 线程id: "<<QThread::currentThreadId()<<endl;
+
 
 }
 

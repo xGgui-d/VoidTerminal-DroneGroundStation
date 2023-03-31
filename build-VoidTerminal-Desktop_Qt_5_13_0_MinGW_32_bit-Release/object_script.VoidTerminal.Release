@@ -12,6 +12,7 @@ release/mytabbar.o
 release/mytabpage.o
 release/mytabpopup.o
 release/mytabwidget.o
+release/datasortthread.o
 release/sendandrecserialthread.o
 release/serialthread.o
 release/datacalibration.o
@@ -32,6 +33,7 @@ release/moc_mytabbar.o
 release/moc_mytabpage.o
 release/moc_mytabpopup.o
 release/moc_mytabwidget.o
+release/moc_datasortthread.o
 release/moc_sendandrecserialthread.o
 release/moc_serialthread.o
 release/moc_datacalibration.o

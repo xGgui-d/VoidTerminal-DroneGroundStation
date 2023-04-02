@@ -51,13 +51,13 @@
 
 ### 4.2 插件下载
 
-QWT6.1.3：https://qwt.sourceforge.io/
+* QWT6.1.3：https://qwt.sourceforge.io/
 
-链接：https://pan.baidu.com/s/1W2UUki_e73pQ7X-7qgs5Fw 提取码：x1aj
+* 链接：https://pan.baidu.com/s/1W2UUki_e73pQ7X-7qgs5Fw 提取码：x1aj
 
-QUC自定义控件：http://www.qtcontrol.cn/
+* QUC自定义控件：http://www.qtcontrol.cn/
 
-链接：https://pan.baidu.com/s/1s9gpVaawuqrKXAXMFsIvWQ 提取码：dyxq
+* 链接：https://pan.baidu.com/s/1s9gpVaawuqrKXAXMFsIvWQ 提取码：dyxq
 
 ### 4.3 协议更改
 

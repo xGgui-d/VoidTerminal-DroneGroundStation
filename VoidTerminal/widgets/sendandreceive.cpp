@@ -225,9 +225,9 @@ void SendAndReceive::on_btn_send_clicked()
     emit sig_alreadySend(m_id,buff);
 }
 //历史发送
-void SendAndReceive::on_cb_historySend_activated(const QString &arg1)
+void SendAndReceive::on_cb_historySend_activated(const QString &str)
 {
-    ui->te_send->append(arg1);
+    ui->te_send->append(str);
 }
 
 //发送的编码选择
@@ -259,6 +259,8 @@ void SendAndReceive::on_cb_sendTimed_stateChanged(int)
     else
         m_timer->stop();
 }
+
+
 //修改延迟
 void SendAndReceive::on_sb_timeSet_valueChanged(int msec)
 {

@@ -22,6 +22,10 @@ int main(int argc, char *argv[])
     progressBar.setTextVisible(false);
     splash.show();
     MainWidget w;
+    w.setWindowFlag(Qt::FramelessWindowHint);
+    w.setAttribute(Qt::WA_TranslucentBackground);
+
+
     //w.showMaximized();
     for(int i =0;i<11;i++)
     {

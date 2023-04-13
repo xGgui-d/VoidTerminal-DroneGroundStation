@@ -58,7 +58,7 @@ void DebugParameter::slot_handleDebugParameterInfo(QString str, int color)
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz] ");
     switch (color)
     {
-    case 0:colorStr="#FFFFFF";break;
+    case 0:colorStr="#000000";break;
     case 1:colorStr="#0080FF";break;
     case 2:colorStr="#33FF33";break;
     case 3:colorStr="#FF3333";break;

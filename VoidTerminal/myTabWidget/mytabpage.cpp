@@ -22,8 +22,3 @@ MyTabPage::~MyTabPage()
     active_id.removeOne(id);
     //qDebug()<<id<<"free"<<active_id;
 }
-
-void MyTabPage::closeEvent(QCloseEvent *event)
-{
-
-}

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SendAndReceive_t {
-    QByteArrayData data[24];
-    char stringdata0[456];
+    QByteArrayData data[25];
+    char stringdata0[460];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -54,8 +54,9 @@ QT_MOC_LITERAL(18, 328, 4), // "arg1"
 QT_MOC_LITERAL(19, 333, 20), // "on_btn_clear_clicked"
 QT_MOC_LITERAL(20, 354, 20), // "on_btn_flash_clicked"
 QT_MOC_LITERAL(21, 375, 27), // "on_cb_historySend_activated"
-QT_MOC_LITERAL(22, 403, 25), // "on_btn_followRoll_clicked"
-QT_MOC_LITERAL(23, 429, 26) // "on_sb_timeSet_valueChanged"
+QT_MOC_LITERAL(22, 403, 3), // "str"
+QT_MOC_LITERAL(23, 407, 25), // "on_btn_followRoll_clicked"
+QT_MOC_LITERAL(24, 433, 26) // "on_sb_timeSet_valueChanged"
 
     },
     "SendAndReceive\0sig_closeSerialPort\0\0"
@@ -69,7 +70,7 @@ QT_MOC_LITERAL(23, 429, 26) // "on_sb_timeSet_valueChanged"
     "on_rbtn_send_HEX_clicked\0"
     "on_cb_sendTimed_stateChanged\0arg1\0"
     "on_btn_clear_clicked\0on_btn_flash_clicked\0"
-    "on_cb_historySend_activated\0"
+    "on_cb_historySend_activated\0str\0"
     "on_btn_followRoll_clicked\0"
     "on_sb_timeSet_valueChanged"
 };
@@ -107,8 +108,8 @@ static const uint qt_meta_data_SendAndReceive[] = {
       19,    0,  137,    2, 0x08 /* Private */,
       20,    0,  138,    2, 0x08 /* Private */,
       21,    1,  139,    2, 0x08 /* Private */,
-      22,    0,  142,    2, 0x08 /* Private */,
-      23,    1,  143,    2, 0x08 /* Private */,
+      23,    0,  142,    2, 0x08 /* Private */,
+      24,    1,  143,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -128,7 +129,7 @@ static const uint qt_meta_data_SendAndReceive[] = {
     QMetaType::Void, QMetaType::Int,   18,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   18,
+    QMetaType::Void, QMetaType::QString,   22,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   18,
 

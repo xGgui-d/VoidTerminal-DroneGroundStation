@@ -21,6 +21,8 @@
 #include "dialogs/skin.h"
 #include "qopengl/glwidget.h"
 #include "dialogs/config.h"
+
+#define Q_OS_WINDOWS
 //声明存储串口配置信息的结构体
 typedef struct{
     QString serialPortNum;
@@ -112,6 +114,39 @@ private:
     QThread *m_thread_2;
     //子线程-3
     QThread *m_thread_3;
+
+
+    //无边框属性
+    int cornerRadius = 0;
+    QPoint lastPos;
+
+    QWidget *border = nullptr;
+
+    bool mousePressed = false;
+    enum {AT_LEFT = 1, AT_TOP = 2,  AT_RIGHT = 4, AT_BOTTOM = 8,
+          AT_TOP_LEFT = 3, AT_TOP_RIGHT = 6, AT_BOTTOM_LEFT = 9, AT_BOTTOM_RIGHT = 12};
+    int mouseState;
+    bool maximized = false;
+
+    //void Init();
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event){
+        mousePressed = false;
+        setCursor(Qt::ArrowCursor);
+         mouseState = 0;
+        if(event->globalPos().y() < 2)
+            controlWindowScale();
+    }
+
+    void mouseDoubleClickEvent(QMouseEvent *event)
+    {
+        if(event->y()<60)
+            controlWindowScale();
+    }
+   // void resizeEvent(QResizeEvent *event);
+    QRect lastGeometry;
+    void controlWindowScale();
 };
 
 #endif // MAINWIDGET_H

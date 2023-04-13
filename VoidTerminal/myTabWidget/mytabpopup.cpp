@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <qmessagebox.h>
 
 MyTabPopup::MyTabPopup(QWidget *parent)
     : QWidget(parent)
@@ -39,13 +40,21 @@ bool MyTabPopup::event(QEvent *event)
         }
     }
         break;
+    default:
+        break;
     }
     return QWidget::event(event);
 }
 //重写关闭函数,实现关闭后把窗口放回
 void MyTabPopup::closeEvent(QCloseEvent* e)
 {
-    e->accept();
-    emit dragBack();
+    if(QMessageBox::question(this,tr("关闭窗口"),tr("关闭后串口的连接并不会自主关闭，你确定要关闭窗口吗？"),
+                             QMessageBox::Yes, QMessageBox::No )
+            == QMessageBox::Yes){
+        e->accept();//不会将事件传递给组件的父组件
+        emit dragBack();
+    }
+    else
+        e->ignore();
 }
 

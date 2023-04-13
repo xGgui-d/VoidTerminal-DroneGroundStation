@@ -40,6 +40,10 @@
         <file>imgs/error.png</file>
         <file>imgs/clearBuff.png</file>
         <file>imgs/loading.png</file>
+        <file>imgs/titleBig.png</file>
+        <file>imgs/titleClose.png</file>
+        <file>imgs/titleSmall.png</file>
+        <file>imgs/titleSplit.png</file>
     </qresource>
     <qresource prefix="/modelSkin">
         <file>modelSkins/droneTex1.png</file>

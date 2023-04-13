@@ -1,8 +1,7 @@
-#include "MyTabWidget.h"
-
-#include "mytabbar.h"
-#include "MyTabPage.h"
-#include "MyTabPopup.h"
+#include "myTabWidget/mytabwidget.h"
+#include "myTabWidget/mytabbar.h"
+#include "myTabWidget/mytabpage.h"
+#include "myTabWidget/mytabpopup.h"
 
 #include <QApplication>
 #include <QMouseEvent>

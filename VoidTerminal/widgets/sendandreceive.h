@@ -53,7 +53,7 @@ private slots:
     void on_cb_sendTimed_stateChanged(int arg1);
     void on_btn_clear_clicked();
     void on_btn_flash_clicked();
-    void on_cb_historySend_activated(const QString &arg1);
+    void on_cb_historySend_activated(const QString &str);
     void on_btn_followRoll_clicked();
     void on_sb_timeSet_valueChanged(int arg1);
 

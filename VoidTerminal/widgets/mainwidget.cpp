@@ -31,6 +31,26 @@ MainWidget::MainWidget(QWidget *parent) :
     ui->setupUi(this);
     // qDebug()<<"主线程id: "<<QThread::currentThreadId()<<endl;
 
+    //自定义无边框
+    ui->mainWidget->setMouseTracking(true); // 允许鼠标跟踪
+    ui->mainDisplayWidget->setMouseTracking(true);
+    setMouseTracking(true);
+
+
+    connect(ui->tbtn_max, &QToolButton::clicked, this, [=]()  // 点击最大化按钮
+    {
+        controlWindowScale();
+    });
+    connect(ui->tbtn_min, &QToolButton::clicked, this,[=]()   // 点击最小化按钮
+    {
+        this->showMinimized();
+    });
+    connect(ui->tbtn_close,&QToolButton::clicked, this,[=]()  // 点击关闭按钮
+    {
+        this->close();
+    });
+
+
     //设置图标
     this->setWindowIcon(QIcon(":/img/imgs/title.png"));
     ui->tbtn_lockModel->setIcon(QIcon(":/img/imgs/unlock.png"));
@@ -143,6 +163,143 @@ MainWidget::~MainWidget()
     delete ui;
 
 }
+
+// 鼠标按下事件(记录拉伸窗口或移动窗口时的起始坐标（左上角）)
+void MainWidget::mousePressEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::LeftButton){
+        mousePressed = true;
+
+        lastPos = event->globalPos() - this->frameGeometry().topLeft();
+    }
+}
+
+// 鼠标移动事件
+void MainWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    if(event->buttons() == Qt::NoButton)
+        mousePressed = false;
+
+    if(!mousePressed){ // 鼠标没按下移动，更新鼠标位置状态
+        mouseState = 0;
+        if(!maximized && abs(event->pos().x() - ui->mainWidget->pos().x()) < 5)
+            mouseState |= AT_LEFT;
+        if(!maximized && abs(event->pos().y() - ui->mainWidget->pos().y()) < 5)
+            mouseState |= AT_TOP;
+        if(!maximized && abs(event->pos().x() - ui->mainWidget->pos().x() - ui->mainWidget->width()) < 5)
+            mouseState |= AT_RIGHT;
+        if(!maximized && abs(event->pos().y() - ui->mainWidget->pos().y() - ui->mainWidget->height()) < 5)
+            mouseState |= AT_BOTTOM;
+
+        //光标设置斜的‘\’
+        if(mouseState == AT_TOP_LEFT  || mouseState == AT_BOTTOM_RIGHT)
+            setCursor(Qt::SizeFDiagCursor);
+        //光标设置斜的‘/’
+        else if(mouseState == AT_TOP_RIGHT || mouseState == AT_BOTTOM_LEFT)
+            setCursor(Qt::SizeBDiagCursor);
+        //光标设置左右
+        else if(mouseState & (AT_LEFT | AT_RIGHT))
+            setCursor(Qt::SizeHorCursor);
+        //光标设置上下
+        else if(mouseState & (AT_TOP | AT_BOTTOM))
+            setCursor(Qt::SizeVerCursor);
+        else
+            unsetCursor();
+
+    }else{ //鼠标按下移动
+        if(mouseState == 0)
+        {
+            if(maximized)
+            {
+                qreal wRatio = (double)event->pos().x() / (double)ui->mainWidget->width();
+                controlWindowScale();
+                this->move(QPoint(event->globalPos().x() - ui->mainWidget->width() * wRatio, -30));
+
+                lastPos = QPoint(ui->mainWidget->width() * wRatio, event->pos().y());
+            } else {
+                this->move(event->globalPos() - lastPos);
+            }
+
+        }else{
+
+            //移动的距离差
+            QPoint d = event->globalPos() - frameGeometry().topLeft() - lastPos;
+
+            if(mouseState & AT_LEFT)
+            {
+                if(!(this->width()-d.x()<this->minimumWidth()))
+                {
+                    this->move(this->frameGeometry().x() + d.x(), this->frameGeometry().y());
+                    this->resize(this->width() - d.x(), this->height());
+                    //lastPos = event->globalPos() - this->frameGeometry().topLeft();
+                }
+                qDebug()<<"LEFT"<<d<<"="<<event->globalPos()<<"-"<<this->frameGeometry().topLeft()<<"-"<<lastPos<<endl;
+            }
+
+            if(mouseState & AT_TOP)
+            {
+                if(!(this->height()-d.y()<this->minimumHeight()))
+                {
+                    this->move(this->frameGeometry().x(), this->frameGeometry().y() + d.y());
+                    this->resize(this->width(), this->height() - d.y());
+                    //lastPos = event->globalPos() - this->frameGeometry().topLeft();
+                }
+
+            }
+
+            if(mouseState & AT_RIGHT)
+            {
+                if(!(event->globalPos().x()<this->frameGeometry().x()+this->width()&&d.x()>0))
+                    this->resize(this->width() + d.x(), this->height());
+
+            }
+
+            if(mouseState & AT_BOTTOM)
+            {
+                if(!(event->globalPos().y()<this->frameGeometry().y()+this->height()&&d.y()>0))
+                    this->resize(this->width(), this->height()+d.y());
+                qDebug()<<"BOTTOM"<<d<<"="<<event->globalPos()<<"-"<<this->frameGeometry().topLeft()<<"-"<<lastPos<<endl;
+            }
+            if(mouseState & AT_BOTTOM|| mouseState & AT_RIGHT)
+                lastPos = event->globalPos() - this->frameGeometry().topLeft();
+
+        }
+
+    }
+}
+
+//点击最大化按钮事件
+void MainWidget::controlWindowScale(){
+#ifdef Q_OS_WINDOWS
+    if(!maximized){
+        lastGeometry = this->frameGeometry();
+        ui->verticalLayout->setContentsMargins(7, 7, 7, 7);
+        //border->hide();
+        this->showMaximized();
+        maximized = true;
+        QPainterPath path;
+        path.addRect(ui->mainWidget->rect());
+        QRegion mask(path.toFillPolygon().toPolygon());
+        ui->mainWidget->setMask(mask);
+    }
+    else{
+        ui->verticalLayout->setContentsMargins(7, 7, 7, 7);
+        this->showNormal();
+        QPainterPath path;
+        path.addRoundedRect(ui->mainWidget->rect(), cornerRadius - 1, cornerRadius - 1);
+        QRegion mask(path.toFillPolygon().toPolygon());
+        ui->mainWidget->setMask(mask);
+        //border->show();
+        this->resize(lastGeometry.width(), lastGeometry.height());
+        this->move(lastGeometry.x(), lastGeometry.y());
+        maximized = false;
+    }
+#endif
+}
+
+
+
+
 
 //串口列表ui的初始化
 void MainWidget::serialInitUI()
@@ -422,7 +579,7 @@ void MainWidget::slot_handlePortProcessInfo(QString str,int color)
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz] ");
     switch (color)
     {
-    case 0:colorStr="#FFFFFF";break;
+    case 0:colorStr="#000000";break;
     case 1:colorStr="#0080FF";break;
     case 2:colorStr="#33FF33";break;
     case 3:colorStr="#FF3333";break;
@@ -447,7 +604,7 @@ void MainWidget::slot_handlePortReadDataInfo(QByteArray data)
     // 获取当前日期
     QDateTime currentDateTime = QDateTime::currentDateTime();
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz:RX:] ");
-    str= "<font color=\"#A66F46\">" + currentDateStr + "</font>"+"<font color=\"#F1F6F9\">" + str + "</font>";
+    str= "<font color=\"#A66F46\">" + currentDateStr + "</font>"+"<font color=\"#000000\">" + str + "</font>";
 
     ui->te_protocolData->appendHtml(str);
 
@@ -466,7 +623,7 @@ void MainWidget::slot_handlePortWriteDataInfo(QByteArray data)
     // 获取当前日期
     QDateTime currentDateTime = QDateTime::currentDateTime();
     QString currentDateStr = currentDateTime.toString("[MM.dd hh:mm:ss.zzz:TX:] ");
-    str= "<font color=\"#324A75\">" + currentDateStr + "</font>"+"<font color=\"#F1F6F9\">" + str + "</font>";
+    str= "<font color=\"#324A75\">" + currentDateStr + "</font>"+"<font color=\"#000000\">" + str + "</font>";
 
     ui->te_protocolData->appendHtml(str);
 }
@@ -546,7 +703,7 @@ void MainWidget::on_tbtn_expend_toggled(bool checked)
     }
     else
     {
-       // ui->splitter_2->setChildrenCollapsible(true);
+        // ui->splitter_2->setChildrenCollapsible(true);
         ui->te_protocolData->hide();
         ui->splitter_2->setSizes(QList<int>()<<1<<0); //隐藏
         ui->gridFrame->setVisible(false);

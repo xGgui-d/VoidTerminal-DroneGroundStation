@@ -220,7 +220,8 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         te_rec = new QPlainTextEdit(groupBox);
         te_rec->setObjectName(QString::fromUtf8("te_rec"));
-        te_rec->setStyleSheet(QString::fromUtf8("color:white;"));
+        te_rec->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background-color:white;"));
 
         gridLayout_2->addWidget(te_rec, 0, 0, 1, 1);
 
@@ -247,6 +248,8 @@ public:
 
         te_send = new QTextEdit(groupBox_2);
         te_send->setObjectName(QString::fromUtf8("te_send"));
+        te_send->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background-color:white;"));
 
         gridLayout_3->addWidget(te_send, 0, 0, 1, 2);
 

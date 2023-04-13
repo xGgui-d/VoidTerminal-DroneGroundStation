@@ -15,9 +15,6 @@ public:
     ~MyTabPage();
     //获取唯一id
     int getId() const { return id; }
-protected:
-    void closeEvent(QCloseEvent *event) override;
-
 private:
     int id=0;
 };

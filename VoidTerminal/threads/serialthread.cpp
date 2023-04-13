@@ -139,6 +139,7 @@ void SerialThread::solt_doDataReceiveWork()
 //数据解析函数,每次接受8位数据，进行通信协议的解析
 void SerialThread::dataParse(uint8_t data)
 {
+
     static uint8_t RxBuffer[BufferSizeMax];//用于暂存每一帧数据
     static uint8_t _data_len = 0,_data_cnt = 0;//用于记录数据长度
     static uint8_t state = 0;//状态机
@@ -181,9 +182,7 @@ void SerialThread::dataParse(uint8_t data)
     else if(state==5)//校验和
     {
         RxBuffer[4+_data_cnt]=data;
-        //  qDebug()<<"校验和"<<endl;
-        //  qDebug()<<"传送至数据分类"<<endl;
-        //qDebug()<<*rxBuffer<<endl;
+
         //计算校验和
         uint8_t sum = 0;
         for(uint8_t index = 0;index<_data_cnt+4;index++)
@@ -272,6 +271,7 @@ void SerialThread::slot_writePID(QVector<uint16_t> *kp,QVector<uint16_t> *ki,QVe
             bool sendSuccess=false;
             serialPortWrite((char *)(data_to_send),cnt);
             emit sig_sendDebugParameterInfo("PID数据帧 "+QString::number(n+1)+" 已经发送，等待返回校验...",0);
+            //延迟一段时间
             Delay_MSec(delay_PID);
             for(uint8_t i=0;i<5;i++)
             {
@@ -344,7 +344,12 @@ void SerialThread::slot_recoverDefault()
         emit sig_sendDebugParameterInfo("已发送恢复默认PID命令，等待返回校验...",0);
         Delay_MSec(delay_PID);
         if((FREAM_HEAD==0x02)&&(CHECK_SUM==0xFD))
+        {
             emit sig_sendDebugParameterInfo("发送恢复默认PID命令成功!",2);
+            FREAM_HEAD=0x00;
+            CHECK_SUM=0x00;
+        }
+
         else
             emit sig_sendDebugParameterInfo("没有收到返回校验，发送恢复默认PID命令失败",3);
     }else
@@ -363,7 +368,11 @@ void SerialThread::slot_savePID()
         emit sig_sendDebugParameterInfo("已发送保存PID命令，等待返回校验...",0);
         Delay_MSec(delay_PID);
         if((FREAM_HEAD==0x0B)&&(CHECK_SUM==0x66))
+        {
             emit sig_sendDebugParameterInfo("发送保存PID命令成功!",2);
+            FREAM_HEAD=0x00;
+            CHECK_SUM=0x00;
+        }
         else
             emit sig_sendDebugParameterInfo("没有收到返回校验，发送保存PID命令失败",3);
     }else
@@ -383,7 +392,11 @@ void SerialThread::serialPortWrite_CAL(QString name,uint8_t data_to_send[],int l
         emit sig_sendCalibrationInfo("已发送"+name+"命令，等待返回校验...",0);
         Delay_MSec(delay_CAL);
         if((FREAM_HEAD==data_to_send[2])&&(CHECK_SUM==data_to_send[len-1]))
+        {
             emit sig_sendCalibrationInfo("发送"+name+"命令成功!",2);
+            FREAM_HEAD=0x00;
+            CHECK_SUM=0x00;
+        }
         else
             emit sig_sendCalibrationInfo("没有收到返回校验，发送"+name+"命令失败",3);
     }else
@@ -499,7 +512,9 @@ void SerialThread::slot_read_version()
 //延时函数
 void SerialThread::Delay_MSec(int msec)
 {
+    //qDebug()<<"进入延迟函数"<<endl;
     QEventLoop loop;//定义一个新的事件循环
     QTimer::singleShot(msec, &loop, SLOT(quit()));//创建单次定时器，槽函数为事件循环的退出函数
     loop.exec();//事件循环开始执行，程序会卡在这里，直到定时时间到，本循环被退出
+    //qDebug()<<"退出延迟函数"<<endl;
 }

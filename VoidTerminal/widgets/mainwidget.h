@@ -22,7 +22,7 @@
 #include "qopengl/glwidget.h"
 #include "dialogs/config.h"
 
-#define Q_OS_WINDOWS
+
 //声明存储串口配置信息的结构体
 typedef struct{
     QString serialPortNum;
@@ -71,6 +71,7 @@ private slots:
     void on_btn_debugParameter_clicked();
     void on_btn_dataCelibration_clicked();
     void on_btn_refresh_clicked();
+    void on_btn_moreFunction_clicked();
 
     void on_btn_checkcalculator_clicked();
     void on_tbtn_expend_toggled(bool checked);
@@ -89,6 +90,9 @@ private slots:
     void on_btn_openSendAndRec_toggled(bool checked);
 
     void on_btn_title_clicked();
+
+
+    void on_tbtn_tophit_toggled(bool checked);
 
 private:
     Ui::MainWidget *ui;
@@ -116,37 +120,27 @@ private:
     QThread *m_thread_3;
 
 
-    //无边框属性
-    int cornerRadius = 0;
     QPoint lastPos;
-
-    QWidget *border = nullptr;
-
+    bool isOnTitleBar = false;
     bool mousePressed = false;
     enum {AT_LEFT = 1, AT_TOP = 2,  AT_RIGHT = 4, AT_BOTTOM = 8,
           AT_TOP_LEFT = 3, AT_TOP_RIGHT = 6, AT_BOTTOM_LEFT = 9, AT_BOTTOM_RIGHT = 12};
-    int mouseState;
+    int mouseState = 0;
     bool maximized = false;
 
-    //void Init();
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event){
-        mousePressed = false;
-        setCursor(Qt::ArrowCursor);
-         mouseState = 0;
-        if(event->globalPos().y() < 2)
-            controlWindowScale();
-    }
+    // 重写鼠标事件
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
+    // 使用过滤器来重写press 和 move 因为使用原来的重写方法会导致子窗口无法使用鼠标追踪
+    bool eventFilter(QObject *watched, QEvent *event);
+    void myMousePressEvent(QMouseEvent *event);
+    void myMouseMoveEvent(QMouseEvent *event);
 
-    void mouseDoubleClickEvent(QMouseEvent *event)
-    {
-        if(event->y()<60)
-            controlWindowScale();
-    }
-   // void resizeEvent(QResizeEvent *event);
-    QRect lastGeometry;
     void controlWindowScale();
+
+    // 窗口靠边半屏
+    enum {LEFT_SIDE = 1, RIGHT_SIDE = 2};
+    void halfSizeOfWindows(int side);
 };
 
 #endif // MAINWIDGET_H

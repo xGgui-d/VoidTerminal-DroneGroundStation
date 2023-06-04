@@ -207,7 +207,7 @@ void SerialThread::dataParse(uint8_t data)
     else
     {
         state = 0;
-        qDebug()<<"default"<<endl;
+        //qDebug()<<"default"<<endl;
     }
 }
 

@@ -27,6 +27,7 @@ int valueIndexes[MAX_CURVE_CH];
 QString curveText[MAX_CURVE_CH];
 QColor curveColor[MAX_CURVE_CH];
 double curveWidth[MAX_CURVE_CH];
+
 //是否正在绘制图像
 bool isPainting = false;
 

@@ -15,6 +15,8 @@ Config::Config(QWidget *parent) :
     m_settings = new QSettings("./UAV_Config_v1.0.ini",QSettings::IniFormat,this);
     //m_settings->setValue("aaa",123);
     //int a=m_settings->value("aaa");
+    // 设置图标
+    this->setWindowIcon(QIcon(":/img/imgs/title.png"));
 
 
 

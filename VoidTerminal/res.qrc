@@ -44,6 +44,8 @@
         <file>imgs/titleClose.png</file>
         <file>imgs/titleSmall.png</file>
         <file>imgs/titleSplit.png</file>
+        <file>imgs/list.png</file>
+        <file>imgs/tophit.png</file>
     </qresource>
     <qresource prefix="/modelSkin">
         <file>modelSkins/droneTex1.png</file>

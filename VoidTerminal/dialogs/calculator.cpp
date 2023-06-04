@@ -9,6 +9,8 @@ Calculator::Calculator(QWidget *parent) :
     //初始化单选按钮
     ui->rbt_Check_Sum->setChecked(true);
     ui->rbt_HEX->setChecked(true);
+    // 设置图标
+    this->setWindowIcon(QIcon(":/img/imgs/title.png"));
 }
 
 Calculator::~Calculator()

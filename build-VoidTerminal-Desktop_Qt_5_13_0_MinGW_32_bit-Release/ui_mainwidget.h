@@ -35,14 +35,18 @@ class Ui_MainWidget
 public:
     QGridLayout *gridLayout_2;
     QWidget *mainWidget;
-    QVBoxLayout *verticalLayout_5;
-    QVBoxLayout *mainLayout;
+    QVBoxLayout *_2;
     QWidget *mainDisplayWidget;
     QVBoxLayout *verticalLayout_3;
     QWidget *titleBar;
     QVBoxLayout *verticalLayout_8;
+    QFrame *titleBar_hor;
     QHBoxLayout *horizontalLayout_3;
+    QLabel *titlelabel;
+    QLabel *label_6;
     QSpacerItem *horizontalSpacer_3;
+    QToolButton *tbtn_more;
+    QToolButton *tbtn_tophit;
     QToolButton *tbtn_min;
     QToolButton *tbtn_max;
     QToolButton *tbtn_close;
@@ -57,7 +61,7 @@ public:
     QPushButton *btn_dataCelibration;
     QGridLayout *gridLayout_4;
     QPushButton *btn_checkcalculator;
-    QPushButton *pushButton_4;
+    QPushButton *btn_moreFunction;
     QPushButton *btn_openSendAndRec;
     QPushButton *pushButton_8;
     QHBoxLayout *horizontalLayout;
@@ -111,6 +115,7 @@ public:
         MainWidget->resize(1330, 850);
         MainWidget->setMinimumSize(QSize(500, 400));
         MainWidget->setMaximumSize(QSize(16777215, 16777215));
+        MainWidget->setMouseTracking(false);
         MainWidget->setStyleSheet(QString::fromUtf8("background-color: #14274E;\n"
 ""));
         gridLayout_2 = new QGridLayout(MainWidget);
@@ -120,82 +125,134 @@ public:
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         mainWidget = new QWidget(MainWidget);
         mainWidget->setObjectName(QString::fromUtf8("mainWidget"));
-        verticalLayout_5 = new QVBoxLayout(mainWidget);
-        verticalLayout_5->setSpacing(0);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        mainLayout = new QVBoxLayout();
-        mainLayout->setSpacing(0);
-        mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
-        mainLayout->setContentsMargins(11, 11, 11, 11);
+        mainWidget->setMouseTracking(false);
+        mainWidget->setStyleSheet(QString::fromUtf8("background-color: #14274E;"));
+        _2 = new QVBoxLayout(mainWidget);
+        _2->setSpacing(0);
+        _2->setContentsMargins(11, 11, 11, 11);
+        _2->setObjectName(QString::fromUtf8("_2"));
+        _2->setContentsMargins(7, 7, 7, 7);
         mainDisplayWidget = new QWidget(mainWidget);
         mainDisplayWidget->setObjectName(QString::fromUtf8("mainDisplayWidget"));
+        mainDisplayWidget->setMouseTracking(false);
         mainDisplayWidget->setStyleSheet(QString::fromUtf8("background-color:#14274E"));
         verticalLayout_3 = new QVBoxLayout(mainDisplayWidget);
-        verticalLayout_3->setSpacing(0);
+        verticalLayout_3->setSpacing(5);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setSizeConstraint(QLayout::SetDefaultConstraint);
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         titleBar = new QWidget(mainDisplayWidget);
         titleBar->setObjectName(QString::fromUtf8("titleBar"));
-        titleBar->setMinimumSize(QSize(0, 30));
+        titleBar->setMinimumSize(QSize(0, 0));
         titleBar->setMaximumSize(QSize(16777215, 30));
         titleBar->setStyleSheet(QString::fromUtf8("background-color:#8CD0F8;"));
         verticalLayout_8 = new QVBoxLayout(titleBar);
-        verticalLayout_8->setSpacing(0);
+        verticalLayout_8->setSpacing(3);
         verticalLayout_8->setContentsMargins(11, 11, 11, 11);
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        verticalLayout_8->setContentsMargins(7, 0, 7, 0);
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(7);
+        verticalLayout_8->setContentsMargins(3, 3, 3, 2);
+        titleBar_hor = new QFrame(titleBar);
+        titleBar_hor->setObjectName(QString::fromUtf8("titleBar_hor"));
+        titleBar_hor->setMinimumSize(QSize(0, 0));
+        titleBar_hor->setMaximumSize(QSize(16777215, 30));
+        horizontalLayout_3 = new QHBoxLayout(titleBar_hor);
+        horizontalLayout_3->setSpacing(3);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(-1, 2, -1, 0);
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 3);
+        titlelabel = new QLabel(titleBar_hor);
+        titlelabel->setObjectName(QString::fromUtf8("titlelabel"));
+        titlelabel->setMinimumSize(QSize(25, 25));
+        titlelabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"\n"
+"	border-image:url(:/img/imgs/title.png);\n"
+"}"));
+        titlelabel->setTextFormat(Qt::PlainText);
+
+        horizontalLayout_3->addWidget(titlelabel);
+
+        label_6 = new QLabel(titleBar_hor);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setStyleSheet(QString::fromUtf8("QLabel{ 	\n"
+"color: #14274E;\n"
+"	font: 75 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"}"));
+
+        horizontalLayout_3->addWidget(label_6);
+
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_3);
 
-        tbtn_min = new QToolButton(titleBar);
+        tbtn_more = new QToolButton(titleBar_hor);
+        tbtn_more->setObjectName(QString::fromUtf8("tbtn_more"));
+        tbtn_more->setMinimumSize(QSize(25, 25));
+        tbtn_more->setMaximumSize(QSize(25, 25));
+        tbtn_more->setStyleSheet(QString::fromUtf8("QPushButton{background-color:#c2c2c2;border-radius:9px}\n"
+"QPushButton:hover {background-color:#f9bf45;border-radius:9px;}\n"
+"QPushButton:pressed {background-color:#ffb11b;border-radius:9px;}"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/imgs/list.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_more->setIcon(icon);
+
+        horizontalLayout_3->addWidget(tbtn_more);
+
+        tbtn_tophit = new QToolButton(titleBar_hor);
+        tbtn_tophit->setObjectName(QString::fromUtf8("tbtn_tophit"));
+        tbtn_tophit->setMinimumSize(QSize(25, 25));
+        tbtn_tophit->setMaximumSize(QSize(25, 25));
+        tbtn_tophit->setStyleSheet(QString::fromUtf8("QPushButton{background-color:#c2c2c2;border-radius:9px}\n"
+"QPushButton:hover {background-color:#f9bf45;border-radius:9px;}\n"
+"QPushButton:pressed {background-color:#ffb11b;border-radius:9px;}"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/img/imgs/tophit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_tophit->setIcon(icon1);
+        tbtn_tophit->setCheckable(true);
+
+        horizontalLayout_3->addWidget(tbtn_tophit);
+
+        tbtn_min = new QToolButton(titleBar_hor);
         tbtn_min->setObjectName(QString::fromUtf8("tbtn_min"));
         tbtn_min->setMinimumSize(QSize(25, 25));
         tbtn_min->setMaximumSize(QSize(25, 25));
         tbtn_min->setStyleSheet(QString::fromUtf8("QPushButton{background-color:#c2c2c2;border-radius:9px}\n"
 "QPushButton:hover {background-color:#f9bf45;border-radius:9px;}\n"
 "QPushButton:pressed {background-color:#ffb11b;border-radius:9px;}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/img/imgs/titleSmall.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_min->setIcon(icon);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/img/imgs/titleSmall.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_min->setIcon(icon2);
 
         horizontalLayout_3->addWidget(tbtn_min);
 
-        tbtn_max = new QToolButton(titleBar);
+        tbtn_max = new QToolButton(titleBar_hor);
         tbtn_max->setObjectName(QString::fromUtf8("tbtn_max"));
         tbtn_max->setMinimumSize(QSize(25, 25));
         tbtn_max->setMaximumSize(QSize(25, 25));
         tbtn_max->setStyleSheet(QString::fromUtf8("QPushButton{background-color:#c2c2c2;border-radius:9px}\n"
 "QPushButton:hover {background-color:#227d51;border-radius:9px;}\n"
 "QPushButton:pressed {background-color:#2d6d4b;border-radius:9px;}"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/img/imgs/titleBig.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_max->setIcon(icon1);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/img/imgs/titleBig.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_max->setIcon(icon3);
 
         horizontalLayout_3->addWidget(tbtn_max);
 
-        tbtn_close = new QToolButton(titleBar);
+        tbtn_close = new QToolButton(titleBar_hor);
         tbtn_close->setObjectName(QString::fromUtf8("tbtn_close"));
         tbtn_close->setMinimumSize(QSize(25, 25));
         tbtn_close->setMaximumSize(QSize(25, 25));
         tbtn_close->setStyleSheet(QString::fromUtf8("QPushButton{background-color:#c2c2c2;border-radius:9px}\n"
 "QPushButton:hover {background-color:#cb4042;border-radius:9px;}\n"
 "QPushButton:pressed {background-color:#ab3b3a;border-radius:9px;}"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/img/imgs/titleClose.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_close->setIcon(icon2);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/img/imgs/titleClose.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_close->setIcon(icon4);
 
         horizontalLayout_3->addWidget(tbtn_close);
 
 
-        verticalLayout_8->addLayout(horizontalLayout_3);
+        verticalLayout_8->addWidget(titleBar_hor);
 
 
         verticalLayout_3->addWidget(titleBar);
@@ -215,10 +272,10 @@ public:
         verticalFrame->setObjectName(QString::fromUtf8("verticalFrame"));
         verticalFrame->setStyleSheet(QString::fromUtf8("background-color:#14274E"));
         verticalLayout = new QVBoxLayout(verticalFrame);
-        verticalLayout->setSpacing(6);
+        verticalLayout->setSpacing(5);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(7, 7, 7, 7);
+        verticalLayout->setContentsMargins(4, 4, 4, 4);
         btn_title = new QPushButton(verticalFrame);
         btn_title->setObjectName(QString::fromUtf8("btn_title"));
         btn_title->setMinimumSize(QSize(0, 40));
@@ -287,25 +344,25 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/img/imgs/calculator.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btn_checkcalculator->setIcon(icon3);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/img/imgs/calculator.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_checkcalculator->setIcon(icon5);
 
         gridLayout_4->addWidget(btn_checkcalculator, 0, 1, 1, 1);
 
-        pushButton_4 = new QPushButton(verticalFrame);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 50));
-        pushButton_4->setMaximumSize(QSize(16777215, 16777215));
-        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        btn_moreFunction = new QPushButton(verticalFrame);
+        btn_moreFunction->setObjectName(QString::fromUtf8("btn_moreFunction"));
+        btn_moreFunction->setMinimumSize(QSize(0, 50));
+        btn_moreFunction->setMaximumSize(QSize(16777215, 16777215));
+        btn_moreFunction->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/img/imgs/morefunc.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_4->setIcon(icon4);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/img/imgs/morefunc.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_moreFunction->setIcon(icon6);
 
-        gridLayout_4->addWidget(pushButton_4, 1, 1, 1, 1);
+        gridLayout_4->addWidget(btn_moreFunction, 1, 1, 1, 1);
 
         btn_openSendAndRec = new QPushButton(verticalFrame);
         btn_openSendAndRec->setObjectName(QString::fromUtf8("btn_openSendAndRec"));
@@ -315,9 +372,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/img/imgs/sendAndRec.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btn_openSendAndRec->setIcon(icon5);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/img/imgs/sendAndRec.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_openSendAndRec->setIcon(icon7);
         btn_openSendAndRec->setCheckable(true);
 
         gridLayout_4->addWidget(btn_openSendAndRec, 0, 0, 1, 1);
@@ -330,9 +387,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/img/imgs/protocol.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_8->setIcon(icon6);
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/img/imgs/protocol.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_8->setIcon(icon8);
 
         gridLayout_4->addWidget(pushButton_8, 1, 0, 1, 1);
 
@@ -350,9 +407,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/img/imgs/setting.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_config->setIcon(icon7);
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/img/imgs/setting.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_config->setIcon(icon9);
 
         horizontalLayout->addWidget(tbtn_config);
 
@@ -364,9 +421,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/img/imgs/note.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_note->setIcon(icon8);
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/img/imgs/note.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_note->setIcon(icon10);
 
         horizontalLayout->addWidget(tbtn_note);
 
@@ -378,9 +435,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/img/imgs/skin.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_skin->setIcon(icon9);
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8(":/img/imgs/skin.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_skin->setIcon(icon11);
 
         horizontalLayout->addWidget(tbtn_skin);
 
@@ -392,9 +449,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/img/imgs/voltmeger.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_gauge->setIcon(icon10);
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8(":/img/imgs/voltmeger.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_gauge->setIcon(icon12);
 
         horizontalLayout->addWidget(tbtn_gauge);
 
@@ -493,15 +550,16 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
         btn_start = new QPushButton(gridFrame);
         btn_start->setObjectName(QString::fromUtf8("btn_start"));
         btn_start->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/img/imgs/start.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btn_start->setIcon(icon11);
+        QIcon icon13;
+        icon13.addFile(QString::fromUtf8(":/img/imgs/start.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_start->setIcon(icon13);
         btn_start->setCheckable(true);
 
         gridLayout->addWidget(btn_start, 0, 1, 1, 1);
@@ -512,9 +570,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/img/imgs/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btn_clear->setIcon(icon12);
+        QIcon icon14;
+        icon14.addFile(QString::fromUtf8(":/img/imgs/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_clear->setIcon(icon14);
 
         gridLayout->addWidget(btn_clear, 0, 3, 1, 1);
 
@@ -524,9 +582,9 @@ public:
 "background-color: #9BA4B4;\n"
 "color: rgb(255,255,255);\n"
 "}"));
-        QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/img/imgs/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btn_stop->setIcon(icon13);
+        QIcon icon15;
+        icon15.addFile(QString::fromUtf8(":/img/imgs/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btn_stop->setIcon(icon15);
         btn_stop->setCheckable(true);
 
         gridLayout->addWidget(btn_stop, 0, 2, 1, 1);
@@ -542,6 +600,7 @@ public:
         te_protocolData = new QPlainTextEdit(gridFrame);
         te_protocolData->setObjectName(QString::fromUtf8("te_protocolData"));
         te_protocolData->setMaximumSize(QSize(16777215, 16777215));
+        te_protocolData->setStyleSheet(QString::fromUtf8("QPlainTextEdit{background-color:#9BA4B4;}"));
 
         gridLayout->addWidget(te_protocolData, 1, 0, 1, 5);
 
@@ -567,15 +626,16 @@ public:
         frame->setStyleSheet(QString::fromUtf8("background-color: #14274E;\n"
 ""));
         horizontalLayout_2 = new QHBoxLayout(frame);
-        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setSpacing(5);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         tbtn_expend_2 = new QToolButton(frame);
         tbtn_expend_2->setObjectName(QString::fromUtf8("tbtn_expend_2"));
         tbtn_expend_2->setMaximumSize(QSize(30, 30));
-        QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/img/imgs/splitter.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_expend_2->setIcon(icon14);
+        QIcon icon16;
+        icon16.addFile(QString::fromUtf8(":/img/imgs/splitter.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_expend_2->setIcon(icon16);
         tbtn_expend_2->setCheckable(true);
         tbtn_expend_2->setChecked(true);
 
@@ -747,9 +807,9 @@ public:
         toolButton->setMaximumSize(QSize(60, 16777215));
         toolButton->setStyleSheet(QString::fromUtf8("color:white;\n"
 "background-color:#9BA4B4;"));
-        QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/img/imgs/alRec.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton->setIcon(icon15);
+        QIcon icon17;
+        icon17.addFile(QString::fromUtf8(":/img/imgs/alRec.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton->setIcon(icon17);
         toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         horizontalLayout_2->addWidget(toolButton);
@@ -767,9 +827,9 @@ public:
         toolButton_2->setMaximumSize(QSize(60, 16777215));
         toolButton_2->setStyleSheet(QString::fromUtf8("color:white;\n"
 "background-color:#9BA4B4;"));
-        QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/img/imgs/alSend.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_2->setIcon(icon16);
+        QIcon icon18;
+        icon18.addFile(QString::fromUtf8(":/img/imgs/alSend.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_2->setIcon(icon18);
         toolButton_2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         horizontalLayout_2->addWidget(toolButton_2);
@@ -787,9 +847,9 @@ public:
         toolButton_3->setMaximumSize(QSize(90, 16777215));
         toolButton_3->setStyleSheet(QString::fromUtf8("color:white;\n"
 "background-color:#9BA4B4;"));
-        QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/img/imgs/error.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_3->setIcon(icon17);
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/img/imgs/error.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_3->setIcon(icon19);
         toolButton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         horizontalLayout_2->addWidget(toolButton_3);
@@ -806,9 +866,9 @@ public:
         tbtn_clearBuff->setObjectName(QString::fromUtf8("tbtn_clearBuff"));
         tbtn_clearBuff->setStyleSheet(QString::fromUtf8("color:white;\n"
 "background-color:#9BA4B4;"));
-        QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/img/imgs/clearBuff.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tbtn_clearBuff->setIcon(icon18);
+        QIcon icon20;
+        icon20.addFile(QString::fromUtf8(":/img/imgs/clearBuff.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tbtn_clearBuff->setIcon(icon20);
 
         horizontalLayout_2->addWidget(tbtn_clearBuff);
 
@@ -824,7 +884,7 @@ public:
         tbtn_expend = new QToolButton(frame);
         tbtn_expend->setObjectName(QString::fromUtf8("tbtn_expend"));
         tbtn_expend->setMaximumSize(QSize(30, 30));
-        tbtn_expend->setIcon(icon14);
+        tbtn_expend->setIcon(icon16);
         tbtn_expend->setCheckable(true);
 
         horizontalLayout_2->addWidget(tbtn_expend);
@@ -833,10 +893,7 @@ public:
         verticalLayout_3->addWidget(frame);
 
 
-        mainLayout->addWidget(mainDisplayWidget);
-
-
-        verticalLayout_5->addLayout(mainLayout);
+        _2->addWidget(mainDisplayWidget);
 
 
         gridLayout_2->addWidget(mainWidget, 0, 0, 1, 1);
@@ -854,6 +911,9 @@ public:
     void retranslateUi(QWidget *MainWidget)
     {
         MainWidget->setWindowTitle(QCoreApplication::translate("MainWidget", "MainWidget", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWidget", "VoidTerminal", nullptr));
+        tbtn_more->setText(QString());
+        tbtn_tophit->setText(QString());
         tbtn_min->setText(QString());
         tbtn_max->setText(QString());
         tbtn_close->setText(QString());
@@ -863,7 +923,7 @@ public:
         btn_debugParameter->setText(QCoreApplication::translate("MainWidget", "\350\260\203\350\257\225\345\217\202\346\225\260", nullptr));
         btn_dataCelibration->setText(QCoreApplication::translate("MainWidget", "\346\225\260\346\215\256\346\240\241\345\207\206", nullptr));
         btn_checkcalculator->setText(QCoreApplication::translate("MainWidget", "\346\240\241\351\252\214\350\256\241\347\256\227\345\231\250", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWidget", "\346\233\264\345\244\232\345\212\237\350\203\275", nullptr));
+        btn_moreFunction->setText(QCoreApplication::translate("MainWidget", "\346\233\264\345\244\232\345\212\237\350\203\275", nullptr));
         btn_openSendAndRec->setText(QCoreApplication::translate("MainWidget", "\345\237\272\346\234\254\346\224\266\345\217\221", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWidget", "\346\237\245\347\234\213\345\215\217\350\256\256", nullptr));
         tbtn_config->setText(QCoreApplication::translate("MainWidget", "...", nullptr));

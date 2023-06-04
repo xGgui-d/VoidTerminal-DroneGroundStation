@@ -14,6 +14,8 @@ Gauge::Gauge(QWidget *parent) :
 
     ui->gauge_voltage->setRange(0,5);
     this->setWindowTitle("仪表盘");
+    // 设置图标
+    this->setWindowIcon(QIcon(":/img/imgs/title.png"));
 
 }
 

@@ -21,9 +21,9 @@ int main(int argc, char *argv[])
     progressBar.setValue(0); // 设置进度条的当前值
     progressBar.setTextVisible(false);
     splash.show();
+
     MainWidget w;
     w.setWindowFlag(Qt::FramelessWindowHint);
-    w.setAttribute(Qt::WA_TranslucentBackground);
 
 
     //w.showMaximized();

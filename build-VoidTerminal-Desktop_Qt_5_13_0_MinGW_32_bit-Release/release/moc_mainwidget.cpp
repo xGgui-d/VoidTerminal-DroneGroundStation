@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWidget_t {
-    QByteArrayData data[38];
-    char stringdata0[779];
+    QByteArrayData data[40];
+    char stringdata0[830];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -54,22 +54,24 @@ QT_MOC_LITERAL(18, 304, 27), // "on_btn_waveAnalysis_clicked"
 QT_MOC_LITERAL(19, 332, 29), // "on_btn_debugParameter_clicked"
 QT_MOC_LITERAL(20, 362, 30), // "on_btn_dataCelibration_clicked"
 QT_MOC_LITERAL(21, 393, 22), // "on_btn_refresh_clicked"
-QT_MOC_LITERAL(22, 416, 30), // "on_btn_checkcalculator_clicked"
-QT_MOC_LITERAL(23, 447, 22), // "on_tbtn_expend_toggled"
-QT_MOC_LITERAL(24, 470, 7), // "checked"
-QT_MOC_LITERAL(25, 478, 24), // "on_tbtn_expend_2_toggled"
-QT_MOC_LITERAL(26, 503, 25), // "on_tbtn_lockModel_toggled"
-QT_MOC_LITERAL(27, 529, 21), // "on_tbtn_gauge_clicked"
-QT_MOC_LITERAL(28, 551, 20), // "on_tbtn_note_clicked"
-QT_MOC_LITERAL(29, 572, 20), // "on_btn_clear_clicked"
-QT_MOC_LITERAL(30, 593, 20), // "on_btn_start_toggled"
-QT_MOC_LITERAL(31, 614, 19), // "on_btn_stop_toggled"
-QT_MOC_LITERAL(32, 634, 23), // "on_pushButton_8_clicked"
-QT_MOC_LITERAL(33, 658, 20), // "on_tbtn_skin_clicked"
-QT_MOC_LITERAL(34, 679, 25), // "on_tbtn_clearBuff_clicked"
-QT_MOC_LITERAL(35, 705, 22), // "on_tbtn_config_clicked"
-QT_MOC_LITERAL(36, 728, 29), // "on_btn_openSendAndRec_toggled"
-QT_MOC_LITERAL(37, 758, 20) // "on_btn_title_clicked"
+QT_MOC_LITERAL(22, 416, 27), // "on_btn_moreFunction_clicked"
+QT_MOC_LITERAL(23, 444, 30), // "on_btn_checkcalculator_clicked"
+QT_MOC_LITERAL(24, 475, 22), // "on_tbtn_expend_toggled"
+QT_MOC_LITERAL(25, 498, 7), // "checked"
+QT_MOC_LITERAL(26, 506, 24), // "on_tbtn_expend_2_toggled"
+QT_MOC_LITERAL(27, 531, 25), // "on_tbtn_lockModel_toggled"
+QT_MOC_LITERAL(28, 557, 21), // "on_tbtn_gauge_clicked"
+QT_MOC_LITERAL(29, 579, 20), // "on_tbtn_note_clicked"
+QT_MOC_LITERAL(30, 600, 20), // "on_btn_clear_clicked"
+QT_MOC_LITERAL(31, 621, 20), // "on_btn_start_toggled"
+QT_MOC_LITERAL(32, 642, 19), // "on_btn_stop_toggled"
+QT_MOC_LITERAL(33, 662, 23), // "on_pushButton_8_clicked"
+QT_MOC_LITERAL(34, 686, 20), // "on_tbtn_skin_clicked"
+QT_MOC_LITERAL(35, 707, 25), // "on_tbtn_clearBuff_clicked"
+QT_MOC_LITERAL(36, 733, 22), // "on_tbtn_config_clicked"
+QT_MOC_LITERAL(37, 756, 29), // "on_btn_openSendAndRec_toggled"
+QT_MOC_LITERAL(38, 786, 20), // "on_btn_title_clicked"
+QT_MOC_LITERAL(39, 807, 22) // "on_tbtn_tophit_toggled"
 
     },
     "MainWidget\0sig_openSerial\0\0sig_closeSerial\0"
@@ -84,6 +86,7 @@ QT_MOC_LITERAL(37, 758, 20) // "on_btn_title_clicked"
     "on_btn_debugParameter_clicked\0"
     "on_btn_dataCelibration_clicked\0"
     "on_btn_refresh_clicked\0"
+    "on_btn_moreFunction_clicked\0"
     "on_btn_checkcalculator_clicked\0"
     "on_tbtn_expend_toggled\0checked\0"
     "on_tbtn_expend_2_toggled\0"
@@ -94,7 +97,7 @@ QT_MOC_LITERAL(37, 758, 20) // "on_btn_title_clicked"
     "on_tbtn_skin_clicked\0on_tbtn_clearBuff_clicked\0"
     "on_tbtn_config_clicked\0"
     "on_btn_openSendAndRec_toggled\0"
-    "on_btn_title_clicked"
+    "on_btn_title_clicked\0on_tbtn_tophit_toggled"
 };
 #undef QT_MOC_LITERAL
 
@@ -104,7 +107,7 @@ static const uint qt_meta_data_MainWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      30,   14, // methods
+      32,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -112,38 +115,40 @@ static const uint qt_meta_data_MainWidget[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  164,    2, 0x06 /* Public */,
-       3,    0,  165,    2, 0x06 /* Public */,
+       1,    0,  174,    2, 0x06 /* Public */,
+       3,    0,  175,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,  166,    2, 0x08 /* Private */,
-       5,    1,  169,    2, 0x08 /* Private */,
-       7,    0,  172,    2, 0x08 /* Private */,
-       8,    1,  173,    2, 0x08 /* Private */,
-      10,    1,  176,    2, 0x08 /* Private */,
-      11,    2,  179,    2, 0x08 /* Private */,
-      14,    0,  184,    2, 0x08 /* Private */,
-      15,    1,  185,    2, 0x08 /* Private */,
-      17,    0,  188,    2, 0x08 /* Private */,
-      18,    0,  189,    2, 0x08 /* Private */,
-      19,    0,  190,    2, 0x08 /* Private */,
-      20,    0,  191,    2, 0x08 /* Private */,
-      21,    0,  192,    2, 0x08 /* Private */,
-      22,    0,  193,    2, 0x08 /* Private */,
-      23,    1,  194,    2, 0x08 /* Private */,
-      25,    1,  197,    2, 0x08 /* Private */,
-      26,    1,  200,    2, 0x08 /* Private */,
-      27,    0,  203,    2, 0x08 /* Private */,
-      28,    0,  204,    2, 0x08 /* Private */,
-      29,    0,  205,    2, 0x08 /* Private */,
-      30,    1,  206,    2, 0x08 /* Private */,
-      31,    1,  209,    2, 0x08 /* Private */,
-      32,    0,  212,    2, 0x08 /* Private */,
-      33,    0,  213,    2, 0x08 /* Private */,
-      34,    0,  214,    2, 0x08 /* Private */,
-      35,    0,  215,    2, 0x08 /* Private */,
-      36,    1,  216,    2, 0x08 /* Private */,
-      37,    0,  219,    2, 0x08 /* Private */,
+       4,    1,  176,    2, 0x08 /* Private */,
+       5,    1,  179,    2, 0x08 /* Private */,
+       7,    0,  182,    2, 0x08 /* Private */,
+       8,    1,  183,    2, 0x08 /* Private */,
+      10,    1,  186,    2, 0x08 /* Private */,
+      11,    2,  189,    2, 0x08 /* Private */,
+      14,    0,  194,    2, 0x08 /* Private */,
+      15,    1,  195,    2, 0x08 /* Private */,
+      17,    0,  198,    2, 0x08 /* Private */,
+      18,    0,  199,    2, 0x08 /* Private */,
+      19,    0,  200,    2, 0x08 /* Private */,
+      20,    0,  201,    2, 0x08 /* Private */,
+      21,    0,  202,    2, 0x08 /* Private */,
+      22,    0,  203,    2, 0x08 /* Private */,
+      23,    0,  204,    2, 0x08 /* Private */,
+      24,    1,  205,    2, 0x08 /* Private */,
+      26,    1,  208,    2, 0x08 /* Private */,
+      27,    1,  211,    2, 0x08 /* Private */,
+      28,    0,  214,    2, 0x08 /* Private */,
+      29,    0,  215,    2, 0x08 /* Private */,
+      30,    0,  216,    2, 0x08 /* Private */,
+      31,    1,  217,    2, 0x08 /* Private */,
+      32,    1,  220,    2, 0x08 /* Private */,
+      33,    0,  223,    2, 0x08 /* Private */,
+      34,    0,  224,    2, 0x08 /* Private */,
+      35,    0,  225,    2, 0x08 /* Private */,
+      36,    0,  226,    2, 0x08 /* Private */,
+      37,    1,  227,    2, 0x08 /* Private */,
+      38,    0,  230,    2, 0x08 /* Private */,
+      39,    1,  231,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -164,20 +169,22 @@ static const uint qt_meta_data_MainWidget[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   24,
-    QMetaType::Void, QMetaType::Bool,   24,
-    QMetaType::Void, QMetaType::Bool,   24,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   25,
+    QMetaType::Void, QMetaType::Bool,   25,
+    QMetaType::Void, QMetaType::Bool,   25,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   24,
-    QMetaType::Void, QMetaType::Bool,   24,
+    QMetaType::Void, QMetaType::Bool,   25,
+    QMetaType::Void, QMetaType::Bool,   25,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   24,
+    QMetaType::Void, QMetaType::Bool,   25,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   25,
 
        0        // eod
 };
@@ -203,21 +210,23 @@ void MainWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 12: _t->on_btn_debugParameter_clicked(); break;
         case 13: _t->on_btn_dataCelibration_clicked(); break;
         case 14: _t->on_btn_refresh_clicked(); break;
-        case 15: _t->on_btn_checkcalculator_clicked(); break;
-        case 16: _t->on_tbtn_expend_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 17: _t->on_tbtn_expend_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 18: _t->on_tbtn_lockModel_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 19: _t->on_tbtn_gauge_clicked(); break;
-        case 20: _t->on_tbtn_note_clicked(); break;
-        case 21: _t->on_btn_clear_clicked(); break;
-        case 22: _t->on_btn_start_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 23: _t->on_btn_stop_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 24: _t->on_pushButton_8_clicked(); break;
-        case 25: _t->on_tbtn_skin_clicked(); break;
-        case 26: _t->on_tbtn_clearBuff_clicked(); break;
-        case 27: _t->on_tbtn_config_clicked(); break;
-        case 28: _t->on_btn_openSendAndRec_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 29: _t->on_btn_title_clicked(); break;
+        case 15: _t->on_btn_moreFunction_clicked(); break;
+        case 16: _t->on_btn_checkcalculator_clicked(); break;
+        case 17: _t->on_tbtn_expend_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 18: _t->on_tbtn_expend_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 19: _t->on_tbtn_lockModel_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 20: _t->on_tbtn_gauge_clicked(); break;
+        case 21: _t->on_tbtn_note_clicked(); break;
+        case 22: _t->on_btn_clear_clicked(); break;
+        case 23: _t->on_btn_start_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 24: _t->on_btn_stop_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 25: _t->on_pushButton_8_clicked(); break;
+        case 26: _t->on_tbtn_skin_clicked(); break;
+        case 27: _t->on_tbtn_clearBuff_clicked(); break;
+        case 28: _t->on_tbtn_config_clicked(); break;
+        case 29: _t->on_btn_openSendAndRec_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 30: _t->on_btn_title_clicked(); break;
+        case 31: _t->on_tbtn_tophit_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -268,13 +277,13 @@ int MainWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 32;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
+        if (_id < 32)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 30;
+        _id -= 32;
     }
     return _id;
 }

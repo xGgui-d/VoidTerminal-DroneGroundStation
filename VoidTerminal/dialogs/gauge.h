@@ -2,7 +2,7 @@
 #define GAUGE_H
 
 #include <QWidget>
-
+#include <QIcon>
 namespace Ui {
 class Gauge;
 }

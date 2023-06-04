@@ -65,102 +65,102 @@
 
 * 数据解析函数，该函数便是对串口的数据进行协议解析，大家根据自己的协议进行更改即可。
 
-  ```cpp
-  //数据解析函数,每次接受8位数据，进行通信协议的解析
-  void SerialThread::dataParse(uint8_t data)
-  {
-      static uint8_t RxBuffer[BufferSizeMax];//用于暂存每一帧数据
-      static uint8_t _data_len = 0,_data_cnt = 0;//用于记录数据长度
-      static uint8_t state = 0;//状态机
-      if(state==0&&data==ANO_HEAD1)//帧头1
-      {
-          state=1;
-          RxBuffer[0]=data;
-          //   qDebug()<<"帧头1"<<endl;
-      }
-      else if(state==1&&data==ANO_HEAD2)//帧头2
-      {
-          state=2;
-          RxBuffer[1]=data;
-          //  qDebug()<<"帧头2"<<endl;
-      }
-      else if(state==2&&data<0XFA)//功能字
-      {
-          state=3;
-          RxBuffer[2]=data;
-          //     qDebug()<<"功能字"<<endl;
-      }
-      else if(state==3&&data<0x64)//数据长度<64字节
-      {
-          state = 4;
-          RxBuffer[3]=data;
-          //记录数据长度
-          _data_len = data;
-          _data_cnt = 0;
-          //  qDebug()<<"总数据长度"<<_data_len<<endl;
-      }
-      else if(state==4&&_data_len>0)//数据区
-      {
-          //长度-1，直到0把数据全部放到RxBuffer
-          _data_len--;
-          // qDebug()<<"剩余数据长度"<<_data_len<<"data为"<<data<<"data_cnt为"<<_data_cnt<<endl;
-          RxBuffer[4+_data_cnt++]=data;
-          if(_data_len==0)
-              state = 5;
-      }
-      else if(state==5)//校验和
-      {
-          RxBuffer[4+_data_cnt]=data;
-          //  qDebug()<<"校验和"<<endl;
-          //  qDebug()<<"传送至数据分类"<<endl;
-          dataSort(RxBuffer,_data_cnt+4);//将检验完的数据发送到分类函数根据功能号分类
-          state = 0;
-      }
-      else
-      {
-          state = 0;
-          //  qDebug()<<"default1"<<endl;
-      }
-  }
-  ```
+```cpp
+//数据解析函数,每次接受8位数据，进行通信协议的解析
+void SerialThread::dataParse(uint8_t data)
+{
+    static uint8_t RxBuffer[BufferSizeMax];//用于暂存每一帧数据
+    static uint8_t _data_len = 0,_data_cnt = 0;//用于记录数据长度
+    static uint8_t state = 0;//状态机
+    if(state==0&&data==ANO_HEAD1)//帧头1
+    {
+        state=1;
+        RxBuffer[0]=data;
+        //   qDebug()<<"帧头1"<<endl;
+    }
+    else if(state==1&&data==ANO_HEAD2)//帧头2
+    {
+        state=2;
+        RxBuffer[1]=data;
+        //  qDebug()<<"帧头2"<<endl;
+    }
+    else if(state==2&&data<0XFA)//功能字
+    {
+        state=3;
+        RxBuffer[2]=data;
+        //     qDebug()<<"功能字"<<endl;
+    }
+    else if(state==3&&data<0x64)//数据长度<64字节
+    {
+        state = 4;
+        RxBuffer[3]=data;
+        //记录数据长度
+        _data_len = data;
+        _data_cnt = 0;
+        //  qDebug()<<"总数据长度"<<_data_len<<endl;
+    }
+    else if(state==4&&_data_len>0)//数据区
+    {
+        //长度-1，直到0把数据全部放到RxBuffer
+        _data_len--;
+        // qDebug()<<"剩余数据长度"<<_data_len<<"data为"<<data<<"data_cnt为"<<_data_cnt<<endl;
+        RxBuffer[4+_data_cnt++]=data;
+        if(_data_len==0)
+            state = 5;
+    }
+    else if(state==5)//校验和
+    {
+        RxBuffer[4+_data_cnt]=data;
+        //  qDebug()<<"校验和"<<endl;
+        //  qDebug()<<"传送至数据分类"<<endl;
+        dataSort(RxBuffer,_data_cnt+4);//将检验完的数据发送到分类函数根据功能号分类
+        state = 0;
+    }
+    else
+    {
+        state = 0;
+        //  qDebug()<<"default1"<<endl;
+    }
+}
+```
 
 * 数据分类函数，由于协议数据太多，代码有点长，所以不展示了。主要就是将数据进行校验和检验，如果通过检验便能够进一步分类数据，将数据保存在全局变量里，这样其他的窗口类就能够接收到这个变量并进行显示操作了。
 
-  ```cpp
-  //将数据根据功能区分类
-  void SerialThread::dataSort(uint8_t *rxBuffer,uint8_t lastIndex)
-  ```
+```cpp
+//将数据根据功能区分类
+void SerialThread::dataSort(uint8_t *rxBuffer,uint8_t lastIndex)
+```
 
 * 全局变量头文件，该头文件里保存了协议中上位机要接收的所有数据，都通过全局变量进行保存了，大家可以根据自己的协议中所需要的数据进行删改。
 
-  ```cpp
-  #ifndef HEADPARAMETER_H
-  #define HEADPARAMETER_H
-  //该头文件主要用于声明各种变量，并extern出去
-  #include <QString>
-  #include <QVector>
-  
-  //传感器数据
-  extern float ROL,PIT,YAW;
-  extern float ALT_USE;
-  extern uint8_t FLY_MODEL,ARMED_FLAG;
-  extern int16_t ACC_X,ACC_Y,ACC_Z,GYRO_X,GYRO_Y,GYRO_Z,MAG_X,MAG_Y,MAG_Z;
-  //遥控器数据
-  extern uint16_t CH_THR,CH_YAW,CH_ROL,CH_PIT,CH_AUX1,CH_AUX2,CH_AUX3,CH_AUX4,CH_AUX5,CH_AUX6;
-  //gps定位数据
-  //...
-  
-  //电压和电流数据
-  extern float VOTAGE,CURRENT;
-  //马达数据
-  extern uint16_t PWM_MOTO[8];
-  //超声波数据
-  extern float ALT_BAR,ALT_CSB;
-  //参数序号，飞机自动定高
-  extern uint16_t PARAMETER;
-  extern float VALUE;
-  ...
-  ```
+```cpp
+#ifndef HEADPARAMETER_H
+#define HEADPARAMETER_H
+//该头文件主要用于声明各种变量，并extern出去
+#include <QString>
+#include <QVector>
+
+//传感器数据
+extern float ROL,PIT,YAW;
+extern float ALT_USE;
+extern uint8_t FLY_MODEL,ARMED_FLAG;
+extern int16_t ACC_X,ACC_Y,ACC_Z,GYRO_X,GYRO_Y,GYRO_Z,MAG_X,MAG_Y,MAG_Z;
+//遥控器数据
+extern uint16_t CH_THR,CH_YAW,CH_ROL,CH_PIT,CH_AUX1,CH_AUX2,CH_AUX3,CH_AUX4,CH_AUX5,CH_AUX6;
+//gps定位数据
+//...
+
+//电压和电流数据
+extern float VOTAGE,CURRENT;
+//马达数据
+extern uint16_t PWM_MOTO[8];
+//超声波数据
+extern float ALT_BAR,ALT_CSB;
+//参数序号，飞机自动定高
+extern uint16_t PARAMETER;
+extern float VALUE;
+...
+```
 
 ### 4.4 UI修改
 

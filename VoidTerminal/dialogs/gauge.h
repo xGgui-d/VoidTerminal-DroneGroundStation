@@ -3,8 +3,9 @@
 
 #include <QWidget>
 #include <QIcon>
-namespace Ui {
-class Gauge;
+namespace Ui
+{
+    class Gauge;
 }
 
 class Gauge : public QWidget
@@ -16,6 +17,7 @@ public:
     ~Gauge();
 private slots:
     void slot_unitUpdate();
+
 private:
     Ui::Gauge *ui;
     QTimer *m_timer;

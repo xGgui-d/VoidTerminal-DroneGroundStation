@@ -13,8 +13,9 @@ public:
     explicit MyTabPopup(QWidget *parent = nullptr);
 
     void setContentWidget(QWidget *page);
-    QWidget* getContentWidget();
-    void closeEvent(QCloseEvent* e) override;
+    QWidget *getContentWidget();
+    void closeEvent(QCloseEvent *e) override;
+
 protected:
     bool event(QEvent *event) override;
 
@@ -23,7 +24,7 @@ signals:
     void dragBack();
 
 private:
-    QWidget *content=nullptr;
+    QWidget *content = nullptr;
 };
 
 #endif // MYTABPOPUP_H

@@ -11,7 +11,6 @@
 #include "sendandreceive.h"
 #include <threads/datasortthread.h>
 
-
 /*
  * 主窗口界面，里面含有一个TabBarWidget主要用于把其他widget添加作为元素
  */
@@ -26,7 +25,7 @@ static DataSortThread *dataSortThread;
 static SendAndRecSerialThread *sendAndRecSerialThread;
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent),
-    ui(new Ui::MainWidget)
+                                          ui(new Ui::MainWidget)
 {
     ui->setupUi(this);
 
@@ -37,11 +36,11 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent),
     // qDebug()<<"主线程id: "<<QThread::currentThreadId()<<endl;
 
     connect(ui->tbtn_max, &QToolButton::clicked, this, [=]() // 点击最大化按钮
-    { controlWindowScale(); });
+            { controlWindowScale(); });
     connect(ui->tbtn_min, &QToolButton::clicked, this, [=]() // 点击最小化按钮
-    { this->showMinimized(); });
+            { this->showMinimized(); });
     connect(ui->tbtn_close, &QToolButton::clicked, this, [=]() // 点击关闭按钮
-    { this->close(); });
+            { this->close(); });
 
     // 设置图标
     this->setWindowIcon(QIcon(":/img/imgs/title.png"));
@@ -161,19 +160,17 @@ void MainWidget::halfSizeOfWindows(int side)
 {
     int nWidth = GetSystemMetrics(SM_CXSCREEN);
     int nHeight = GetSystemMetrics(SM_CYSCREEN);
-    if(side == LEFT_SIDE)
+    if (side == LEFT_SIDE)
     {
-        this->move(0,0);
-        this->resize(nWidth/2,nHeight);
+        this->move(0, 0);
+        this->resize(nWidth / 2, nHeight);
     }
-    else if(side == RIGHT_SIDE)
+    else if (side == RIGHT_SIDE)
     {
-        this->move(nWidth/2,0);
-        this->resize(nWidth/2,nHeight);
+        this->move(nWidth / 2, 0);
+        this->resize(nWidth / 2, nHeight);
     }
-
 }
-
 
 // 重写鼠标双击事件
 void MainWidget::mouseDoubleClickEvent(QMouseEvent *event)
@@ -192,9 +189,9 @@ void MainWidget::mouseReleaseEvent(QMouseEvent *event)
     if (event->globalPos().y() < 2)
         controlWindowScale();
     // 靠边半屏
-    if((event->globalPos().x()<2) && (mouseState == 0))
+    if ((event->globalPos().x() < 2) && (mouseState == 0))
         halfSizeOfWindows(LEFT_SIDE);
-    if((event->globalPos().x()>GetSystemMetrics(SM_CXSCREEN)-2) && (mouseState == 0))
+    if ((event->globalPos().x() > GetSystemMetrics(SM_CXSCREEN) - 2) && (mouseState == 0))
         halfSizeOfWindows(RIGHT_SIDE);
     mouseState = 0;
 }
@@ -358,7 +355,7 @@ bool MainWidget::eventFilter(QObject *watched, QEvent *event)
 
     // 鼠标移动事件
     if (mouseEvent->type() == QEvent::HoverEnter || mouseEvent->type() == QEvent::HoverLeave ||
-            mouseEvent->type() == QEvent::HoverMove)
+        mouseEvent->type() == QEvent::HoverMove)
     {
         myMouseMoveEvent(mouseEvent);
     }
@@ -792,7 +789,11 @@ void MainWidget::on_btn_openSendAndRec_toggled(bool checked)
 // 打开更多功能按钮
 void MainWidget::on_btn_moreFunction_clicked()
 {
+}
 
+// 点击下拉按钮
+void MainWidget::on_tbtn_more_clicked()
+{
 }
 
 // 展开右边的协议数据显示
@@ -897,13 +898,14 @@ void MainWidget::on_btn_title_clicked()
 void MainWidget::on_tbtn_tophit_toggled(bool checked)
 {
     // 设置窗口置顶，防止闪屏的方法
-    if(checked){
-        QWindow* pWin = this->windowHandle();
-        pWin->setFlags(this->windowFlags()|Qt::WindowStaysOnTopHint);
+    if (checked)
+    {
+        QWindow *pWin = this->windowHandle();
+        pWin->setFlags(this->windowFlags() | Qt::WindowStaysOnTopHint);
     }
-    else {
-        QWindow* pWin = this->windowHandle();
-        pWin->setFlags(this->windowFlags()&~Qt::WindowStaysOnTopHint);
-
+    else
+    {
+        QWindow *pWin = this->windowHandle();
+        pWin->setFlags(this->windowFlags() & ~Qt::WindowStaysOnTopHint);
     }
 }

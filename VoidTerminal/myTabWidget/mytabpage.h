@@ -13,10 +13,11 @@ class MyTabPage : public QWidget
 public:
     explicit MyTabPage(QWidget *parent = nullptr);
     ~MyTabPage();
-    //获取唯一id
+    // 获取唯一id
     int getId() const { return id; }
+
 private:
-    int id=0;
+    int id = 0;
 };
 
 #endif // MYTABPAGE_H

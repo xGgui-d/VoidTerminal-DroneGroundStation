@@ -5,8 +5,9 @@
 #include <QWidget>
 #include <qdialog.h>
 
-namespace Ui {
-class Config;
+namespace Ui
+{
+    class Config;
 }
 
 class Config : public QDialog
@@ -18,7 +19,6 @@ public:
     ~Config();
 
 private slots:
-
 
 private:
     Ui::Config *ui;

@@ -4,8 +4,9 @@
 #include <QDialog>
 #include <qradiobutton.h>
 
-namespace Ui {
-class Skin;
+namespace Ui
+{
+    class Skin;
 }
 
 class Skin : public QDialog
@@ -20,6 +21,7 @@ signals:
 private slots:
     void on_btn_ok_clicked();
     void on_btn_cancel_clicked();
+
 private:
     Ui::Skin *ui;
     QRadioButton *m_rbtn;

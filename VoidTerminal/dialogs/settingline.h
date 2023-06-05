@@ -5,8 +5,9 @@
 #include <QComboBox>
 #include <QColorDialog>
 #include <QLineEdit>
-namespace Ui {
-class SetingLine;
+namespace Ui
+{
+    class SetingLine;
 }
 
 class SettingLine : public QDialog
@@ -16,11 +17,12 @@ class SettingLine : public QDialog
 public:
     explicit SettingLine(QWidget *parent = nullptr);
     ~SettingLine();
+
 private:
     void updateLine();
-    void setToolBtnColor(QToolButton *tbtn,QColor color);
+    void setToolBtnColor(QToolButton *tbtn, QColor color);
 signals:
-    //提醒checkbox更改标签
+    // 提醒checkbox更改标签
     void sig_setText();
 private slots:
     void on_btn_ok_clicked();
@@ -32,7 +34,6 @@ private:
     QToolButton *m_setColorButton;
     QLineEdit *m_lineWidthEdit;
     QColorDialog *m_qcolorDialog;
-
 };
 
 #endif // SETINGLINE_H

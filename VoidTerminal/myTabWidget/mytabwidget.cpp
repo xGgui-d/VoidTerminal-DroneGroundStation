@@ -22,43 +22,43 @@ MyTabWidget::MyTabWidget(QWidget *parent)
 
 int MyTabWidget::appendNormalPage(QWidget *page)
 {
-    if(!page)
+    if (!page)
         return -1;
-    //设置为调用close时释放
+    // 设置为调用close时释放
     page->setAttribute(Qt::WA_DeleteOnClose);
-    //最后是添加到stackedWidget去了
-    const int index=addTab(page,page->windowTitle());
-    //切换为当前新增页
+    // 最后是添加到stackedWidget去了
+    const int index = addTab(page, page->windowTitle());
+    // 切换为当前新增页
     setCurrentIndex(index);
     return index;
 }
 
 void MyTabWidget::removeNormalPage(QWidget *page)
 {
-    if(!page)
+    if (!page)
         return;
     removeNormalIndex(indexOf(page));
 }
 
 void MyTabWidget::takeNormalPage(QWidget *page)
 {
-    if(!page)
+    if (!page)
         return;
     removeTab(indexOf(page));
 }
 
 void MyTabWidget::removeNormalIndex(int index)
 {
-    if(indexValid(index))
+    if (indexValid(index))
     {
-        QWidget *page=this->widget(index);
-        //判断是否为固定不删除的
-        if(!page||fixedPage.contains(page))
+        QWidget *page = this->widget(index);
+        // 判断是否为固定不删除的
+        if (!page || fixedPage.contains(page))
             return;
-        //removeTab只是从tabbar移除了，并没有释放
+        // removeTab只是从tabbar移除了，并没有释放
         removeTab(index);
-        //可以自己调用delete，或者设置tab页为WA_DeleteOnClose,关闭时释放
-        //delete page;
+        // 可以自己调用delete，或者设置tab页为WA_DeleteOnClose,关闭时释放
+        // delete page;
         page->close();
     }
 }
@@ -71,7 +71,7 @@ void MyTabWidget::removeCurrentPage()
 void MyTabWidget::clearNormalPage()
 {
     const int tab_count = this->count();
-    //从后往前删，这样index位置就是固定的
+    // 从后往前删，这样index位置就是固定的
     for (int index = tab_count - 1; index >= 0; index--)
     {
         removeNormalIndex(index);
@@ -80,12 +80,12 @@ void MyTabWidget::clearNormalPage()
 
 void MyTabWidget::clearAllPage()
 {
-    //全部移除
-    while(this->count()>0)
+    // 全部移除
+    while (this->count() > 0)
     {
-        QWidget *page=this->widget(0);
+        QWidget *page = this->widget(0);
         removeTab(0);
-        if(page)
+        if (page)
             page->close();
     }
     fixedPage.clear();
@@ -93,7 +93,7 @@ void MyTabWidget::clearAllPage()
 
 void MyTabWidget::appendFixedPage(QWidget *page)
 {
-    if(!page)
+    if (!page)
         return;
     appendNormalPage(page);
     setFixedPage(page);
@@ -101,20 +101,20 @@ void MyTabWidget::appendFixedPage(QWidget *page)
 
 void MyTabWidget::setFixedPage(QWidget *page)
 {
-    if(!page)
+    if (!page)
         return;
     setFixedIndex(indexOf(page));
 }
 
 void MyTabWidget::setFixedIndex(int index)
 {
-    if(indexValid(index))
+    if (indexValid(index))
     {
-        QWidget *page=this->widget(index);
-        if(page&&!fixedPage.contains(page))
+        QWidget *page = this->widget(index);
+        if (page && !fixedPage.contains(page))
         {
             fixedPage.push_back(page);
-            //不显示关闭按钮，替换为nullptr
+            // 不显示关闭按钮，替换为nullptr
             tabBar()->setTabButton(index, QTabBar::RightSide, nullptr);
         }
     }
@@ -122,14 +122,14 @@ void MyTabWidget::setFixedIndex(int index)
 
 bool MyTabWidget::indexValid(int index) const
 {
-    if(index<0||index>=this->count())
+    if (index < 0 || index >= this->count())
         return false;
     return true;
 }
 
 bool MyTabWidget::pageValid(QWidget *page) const
 {
-    if(!page)
+    if (!page)
         return false;
     return indexValid(indexOf(page));
 }
@@ -137,25 +137,26 @@ bool MyTabWidget::pageValid(QWidget *page) const
 void MyTabWidget::showEvent(QShowEvent *event)
 {
     QTabWidget::showEvent(event);
-    //初始化时把已有的设置为close释放
-    for(int index=0;index<this->count();index++)
+    // 初始化时把已有的设置为close释放
+    for (int index = 0; index < this->count(); index++)
     {
-        QWidget *page=this->widget(index);
-        if(page)
+        QWidget *page = this->widget(index);
+        if (page)
             page->setAttribute(Qt::WA_DeleteOnClose);
     }
 }
 
 void MyTabWidget::initTabBar()
 {
-    //qDebug()<<"初始化tabBar"<<endl;
-    MyTabBar *bar=new MyTabBar(this);
-    //setTabBar是protected成员函数，要使用就得继承
+    // qDebug()<<"初始化tabBar"<<endl;
+    MyTabBar *bar = new MyTabBar(this);
+    // setTabBar是protected成员函数，要使用就得继承
     setTabBar(bar);
-    //点击页签上的关闭按钮时，触发信号
-    connect(bar,&QTabBar::tabCloseRequested,this,&MyTabWidget::removeNormalIndex);
-    //拖拽到外部-还未释放鼠标
-    connect(bar,&MyTabBar::beginDragOut,this,[this,bar](int index){
+    // 点击页签上的关闭按钮时，触发信号
+    connect(bar, &QTabBar::tabCloseRequested, this, &MyTabWidget::removeNormalIndex);
+    // 拖拽到外部-还未释放鼠标
+    connect(bar, &MyTabBar::beginDragOut, this, [this, bar](int index)
+            {
         if(!indexValid(index))
             return;
         QWidget *drag_tab=this->widget(index);
@@ -197,26 +198,26 @@ void MyTabWidget::initTabBar()
             }
         });
 
-        drag->exec(Qt::MoveAction);
-    });
+        drag->exec(Qt::MoveAction); });
 }
 
 void MyTabWidget::popPage(QWidget *page)
 {
     takeNormalPage(page);
-    //这里套一个自定义标题栏的窗口给page
-    MyTabPopup *pop=new MyTabPopup();
-    ///点击关闭按钮会释放
-    //pop->setAttribute(Qt::WA_DeleteOnClose);
+    // 这里套一个自定义标题栏的窗口给page
+    MyTabPopup *pop = new MyTabPopup();
+    /// 点击关闭按钮会释放
+    // pop->setAttribute(Qt::WA_DeleteOnClose);
 
     pop->setContentWidget(page);
     pop->setWindowTitle(page->windowTitle());
     pop->resize(page->size());
-    //拖出来的位置有点偏移
-    pop->move(QCursor::pos()-QPoint(10,10));
+    // 拖出来的位置有点偏移
+    pop->move(QCursor::pos() - QPoint(10, 10));
 
-    //判断独立窗口是否拖回tab
-    connect(pop,&MyTabPopup::dragRelease,this,[=](const QPoint &pos){
+    // 判断独立窗口是否拖回tab
+    connect(pop, &MyTabPopup::dragRelease, this, [=](const QPoint &pos)
+            {
         const QPoint bar_pos=tabBar()->mapFromGlobal(pos);
         //如果又拖回了tabbar范围内，就把widget取出来放回tab
         if(tabBar()->contentsRect().contains(bar_pos))
@@ -227,23 +228,22 @@ void MyTabWidget::popPage(QWidget *page)
             //关闭的时候会在原来的位置闪一下？
             pop->close();
             //this->activateWindow();
-        }
-    });
+        } });
 
-    //点击关闭按钮放回item
-    connect(pop,&MyTabPopup::dragBack,this,[=](){
-        //如果又拖回了tabbar范围内，就把widget取出来放回tab
-            QWidget *content=pop->getContentWidget();
-            this->appendNormalPage(content);
-            pop->disconnect();
-            //关闭的时候会在原来的位置闪一下？
-            pop->close();
-            //this->activateWindow();
-    });
+    // 点击关闭按钮放回item
+    connect(pop, &MyTabPopup::dragBack, this, [=]()
+            {
+                // 如果又拖回了tabbar范围内，就把widget取出来放回tab
+                QWidget *content = pop->getContentWidget();
+                this->appendNormalPage(content);
+                pop->disconnect();
+                // 关闭的时候会在原来的位置闪一下？
+                pop->close();
+                // this->activateWindow();
+            });
 
     pop->show();
     page->show();
     pop->activateWindow();
     pop->setFocus();
 }
-

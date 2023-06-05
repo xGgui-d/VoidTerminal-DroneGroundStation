@@ -15,21 +15,21 @@ public:
     explicit MyTabBar(QWidget *parent = nullptr);
 
 protected:
-    void mousePressEvent (QMouseEvent *event) override;
-    void mouseMoveEvent (QMouseEvent *event) override;
-    void mouseReleaseEvent (QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 signals:
-    //拖出时发出信号
+    // 拖出时发出信号
     void beginDragOut(int index);
 
 private:
-    //鼠标按下
-    bool theDragPress=false;
-    //拖拽到了外部
-    bool theDragOut=false;
-    //按下时位置
-    //QPoint pressPos;
+    // 鼠标按下
+    bool theDragPress = false;
+    // 拖拽到了外部
+    bool theDragOut = false;
+    // 按下时位置
+    // QPoint pressPos;
 };
 
 #endif // MYTABBAR_H

@@ -22,22 +22,23 @@
 #include "qopengl/glwidget.h"
 #include "dialogs/config.h"
 
-
-//声明存储串口配置信息的结构体
-typedef struct{
+// 声明存储串口配置信息的结构体
+typedef struct
+{
     QString serialPortNum;
     int serialPortBaud;
     int serialPortCheckBit;
     int serialPortStopBit;
     int serialPortDataBit;
     QString serialPortDescription;
-}SerialConfig;
+} SerialConfig;
 extern SerialConfig serialConfig;
 
 extern bool showProtocolFlag;
 
-namespace Ui {
-class MainWidget;
+namespace Ui
+{
+    class MainWidget;
 }
 
 class MainWidget : public QWidget
@@ -62,7 +63,7 @@ private slots:
     void slot_updateUI();
     void slot_handlePortReadDataInfo(QByteArray data);
     void slot_handlePortWriteDataInfo(QByteArray data);
-    void slot_handlePortProcessInfo(QString str,int color);
+    void slot_handlePortProcessInfo(QString str, int color);
 
     void on_btn_openAndCloseSerial_clicked();
     void on_tabBar_tabCloseRequested(int index);
@@ -91,8 +92,9 @@ private slots:
 
     void on_btn_title_clicked();
 
-
     void on_tbtn_tophit_toggled(bool checked);
+
+    void on_tbtn_more_clicked();
 
 private:
     Ui::MainWidget *ui;
@@ -108,23 +110,30 @@ private:
 
     Config *m_config;
 
+    // 存储收发界面的容器
+    QVector<SendAndReceive *> m_sendAndReceives;
 
-    //存储收发界面的容器
-    QVector<SendAndReceive*> m_sendAndReceives;
-
-    //子线程_1
+    // 子线程_1
     QThread *m_thread_1;
-    //子线程_2
+    // 子线程_2
     QThread *m_thread_2;
-    //子线程-3
+    // 子线程-3
     QThread *m_thread_3;
-
 
     QPoint lastPos;
     bool isOnTitleBar = false;
     bool mousePressed = false;
-    enum {AT_LEFT = 1, AT_TOP = 2,  AT_RIGHT = 4, AT_BOTTOM = 8,
-          AT_TOP_LEFT = 3, AT_TOP_RIGHT = 6, AT_BOTTOM_LEFT = 9, AT_BOTTOM_RIGHT = 12};
+    enum
+    {
+        AT_LEFT = 1,
+        AT_TOP = 2,
+        AT_RIGHT = 4,
+        AT_BOTTOM = 8,
+        AT_TOP_LEFT = 3,
+        AT_TOP_RIGHT = 6,
+        AT_BOTTOM_LEFT = 9,
+        AT_BOTTOM_RIGHT = 12
+    };
     int mouseState = 0;
     bool maximized = false;
 
@@ -135,11 +144,15 @@ private:
     bool eventFilter(QObject *watched, QEvent *event);
     void myMousePressEvent(QMouseEvent *event);
     void myMouseMoveEvent(QMouseEvent *event);
-
+    // 控制窗口的最大化和最小化
     void controlWindowScale();
 
     // 窗口靠边半屏
-    enum {LEFT_SIDE = 1, RIGHT_SIDE = 2};
+    enum
+    {
+        LEFT_SIDE = 1,
+        RIGHT_SIDE = 2
+    };
     void halfSizeOfWindows(int side);
 };
 

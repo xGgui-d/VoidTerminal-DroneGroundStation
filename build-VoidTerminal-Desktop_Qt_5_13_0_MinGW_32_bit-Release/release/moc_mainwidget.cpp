@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWidget_t {
-    QByteArrayData data[40];
-    char stringdata0[830];
+    QByteArrayData data[41];
+    char stringdata0[851];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -71,7 +71,8 @@ QT_MOC_LITERAL(35, 707, 25), // "on_tbtn_clearBuff_clicked"
 QT_MOC_LITERAL(36, 733, 22), // "on_tbtn_config_clicked"
 QT_MOC_LITERAL(37, 756, 29), // "on_btn_openSendAndRec_toggled"
 QT_MOC_LITERAL(38, 786, 20), // "on_btn_title_clicked"
-QT_MOC_LITERAL(39, 807, 22) // "on_tbtn_tophit_toggled"
+QT_MOC_LITERAL(39, 807, 22), // "on_tbtn_tophit_toggled"
+QT_MOC_LITERAL(40, 830, 20) // "on_tbtn_more_clicked"
 
     },
     "MainWidget\0sig_openSerial\0\0sig_closeSerial\0"
@@ -97,7 +98,8 @@ QT_MOC_LITERAL(39, 807, 22) // "on_tbtn_tophit_toggled"
     "on_tbtn_skin_clicked\0on_tbtn_clearBuff_clicked\0"
     "on_tbtn_config_clicked\0"
     "on_btn_openSendAndRec_toggled\0"
-    "on_btn_title_clicked\0on_tbtn_tophit_toggled"
+    "on_btn_title_clicked\0on_tbtn_tophit_toggled\0"
+    "on_tbtn_more_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -107,7 +109,7 @@ static const uint qt_meta_data_MainWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      32,   14, // methods
+      33,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -115,40 +117,41 @@ static const uint qt_meta_data_MainWidget[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  174,    2, 0x06 /* Public */,
-       3,    0,  175,    2, 0x06 /* Public */,
+       1,    0,  179,    2, 0x06 /* Public */,
+       3,    0,  180,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,  176,    2, 0x08 /* Private */,
-       5,    1,  179,    2, 0x08 /* Private */,
-       7,    0,  182,    2, 0x08 /* Private */,
-       8,    1,  183,    2, 0x08 /* Private */,
-      10,    1,  186,    2, 0x08 /* Private */,
-      11,    2,  189,    2, 0x08 /* Private */,
-      14,    0,  194,    2, 0x08 /* Private */,
-      15,    1,  195,    2, 0x08 /* Private */,
-      17,    0,  198,    2, 0x08 /* Private */,
-      18,    0,  199,    2, 0x08 /* Private */,
-      19,    0,  200,    2, 0x08 /* Private */,
-      20,    0,  201,    2, 0x08 /* Private */,
-      21,    0,  202,    2, 0x08 /* Private */,
-      22,    0,  203,    2, 0x08 /* Private */,
-      23,    0,  204,    2, 0x08 /* Private */,
-      24,    1,  205,    2, 0x08 /* Private */,
-      26,    1,  208,    2, 0x08 /* Private */,
-      27,    1,  211,    2, 0x08 /* Private */,
-      28,    0,  214,    2, 0x08 /* Private */,
-      29,    0,  215,    2, 0x08 /* Private */,
-      30,    0,  216,    2, 0x08 /* Private */,
-      31,    1,  217,    2, 0x08 /* Private */,
-      32,    1,  220,    2, 0x08 /* Private */,
-      33,    0,  223,    2, 0x08 /* Private */,
-      34,    0,  224,    2, 0x08 /* Private */,
-      35,    0,  225,    2, 0x08 /* Private */,
-      36,    0,  226,    2, 0x08 /* Private */,
-      37,    1,  227,    2, 0x08 /* Private */,
-      38,    0,  230,    2, 0x08 /* Private */,
-      39,    1,  231,    2, 0x08 /* Private */,
+       4,    1,  181,    2, 0x08 /* Private */,
+       5,    1,  184,    2, 0x08 /* Private */,
+       7,    0,  187,    2, 0x08 /* Private */,
+       8,    1,  188,    2, 0x08 /* Private */,
+      10,    1,  191,    2, 0x08 /* Private */,
+      11,    2,  194,    2, 0x08 /* Private */,
+      14,    0,  199,    2, 0x08 /* Private */,
+      15,    1,  200,    2, 0x08 /* Private */,
+      17,    0,  203,    2, 0x08 /* Private */,
+      18,    0,  204,    2, 0x08 /* Private */,
+      19,    0,  205,    2, 0x08 /* Private */,
+      20,    0,  206,    2, 0x08 /* Private */,
+      21,    0,  207,    2, 0x08 /* Private */,
+      22,    0,  208,    2, 0x08 /* Private */,
+      23,    0,  209,    2, 0x08 /* Private */,
+      24,    1,  210,    2, 0x08 /* Private */,
+      26,    1,  213,    2, 0x08 /* Private */,
+      27,    1,  216,    2, 0x08 /* Private */,
+      28,    0,  219,    2, 0x08 /* Private */,
+      29,    0,  220,    2, 0x08 /* Private */,
+      30,    0,  221,    2, 0x08 /* Private */,
+      31,    1,  222,    2, 0x08 /* Private */,
+      32,    1,  225,    2, 0x08 /* Private */,
+      33,    0,  228,    2, 0x08 /* Private */,
+      34,    0,  229,    2, 0x08 /* Private */,
+      35,    0,  230,    2, 0x08 /* Private */,
+      36,    0,  231,    2, 0x08 /* Private */,
+      37,    1,  232,    2, 0x08 /* Private */,
+      38,    0,  235,    2, 0x08 /* Private */,
+      39,    1,  236,    2, 0x08 /* Private */,
+      40,    0,  239,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -185,6 +188,7 @@ static const uint qt_meta_data_MainWidget[] = {
     QMetaType::Void, QMetaType::Bool,   25,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,   25,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -227,6 +231,7 @@ void MainWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 29: _t->on_btn_openSendAndRec_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 30: _t->on_btn_title_clicked(); break;
         case 31: _t->on_tbtn_tophit_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 32: _t->on_tbtn_more_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -277,13 +282,13 @@ int MainWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 32)
+        if (_id < 33)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 32;
+        _id -= 33;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 32)
+        if (_id < 33)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 32;
+        _id -= 33;
     }
     return _id;
 }

@@ -6,8 +6,9 @@
 #include <QDebug>
 #include <QTableWidget>
 #include "headparameter.h"
-namespace Ui {
-class FlightStatus;
+namespace Ui
+{
+    class FlightStatus;
 }
 
 class FlightStatus : public QWidget
@@ -27,13 +28,13 @@ signals:
 public slots:
     void slot_changeSkin(int index);
 private slots:
-    //更新显示组件
+    // 更新显示组件
     void slot_unitUpdate();
+
 private:
     Ui::FlightStatus *ui;
-    QTimer* m_timer;
+    QTimer *m_timer;
     bool m_isLock;
-
 };
 
 #endif // FLIGHTSTATUS_H

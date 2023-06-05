@@ -7,21 +7,22 @@
 #include <QTextCodec>
 #include <myTabWidget/mytabpage.h>
 
-typedef struct{
+typedef struct
+{
     QString serialPortNum;
     int serialPortBaud;
     int serialPortCheckBit;
     int serialPortStopBit;
     int serialPortDataBit;
-    QString serialPortDescription;//设备信息
-    int id;//用于鉴别是哪一个tab的串口
-}MultiSerialConfig;
+    QString serialPortDescription; // 设备信息
+    int id;                        // 用于鉴别是哪一个tab的串口
+} MultiSerialConfig;
 
 extern MultiSerialConfig multiSerialConfigs[MAX_PORT];
 
-
-namespace Ui {
-class SendAndReceive;
+namespace Ui
+{
+    class SendAndReceive;
 }
 
 class SendAndReceive : public MyTabPage
@@ -32,15 +33,16 @@ public:
     explicit SendAndReceive(QWidget *parent = nullptr);
     ~SendAndReceive();
     static int s_ID;
+
 private:
     QString getCorrectUnicode(const QByteArray &ba);
 signals:
     void sig_closeSerialPort(int m_id);
     void sig_openSerialPort(int m_id);
-    void sig_alreadySend(int m_id,QByteArray buff);
+    void sig_alreadySend(int m_id, QByteArray buff);
 public slots:
-    void slot_handleAlreadyRead(int m_id,QByteArray buff);
-    void slot_updateOpenBtn(bool flag,int m_id);
+    void slot_handleAlreadyRead(int m_id, QByteArray buff);
+    void slot_updateOpenBtn(bool flag, int m_id);
 private slots:
     void slot_serialConfigUpdate(int);
 
@@ -60,7 +62,7 @@ private slots:
 private:
     Ui::SendAndReceive *ui;
     int m_id;
-    bool m_isOpen=false;
+    bool m_isOpen = false;
     QTimer *m_timer;
     int m_timeSendDelay;
     int br;

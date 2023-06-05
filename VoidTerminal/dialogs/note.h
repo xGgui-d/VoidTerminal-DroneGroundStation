@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class Note;
+namespace Ui
+{
+    class Note;
 }
 
 class Note : public QMainWindow

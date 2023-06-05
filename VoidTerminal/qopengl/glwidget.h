@@ -1,9 +1,6 @@
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 
-
-
-
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLVertexArrayObject>
@@ -30,18 +27,18 @@ public slots:
     void slot_setYRotation(int angle);
     void slot_setZRotation(int angle);
 signals:
-   //void sig_xRotationChanged(int angle);
-   //void sig_yRotationChanged(int angle);
-   //void sig_zRotationChanged(int angle);
+    // void sig_xRotationChanged(int angle);
+    // void sig_yRotationChanged(int angle);
+    // void sig_zRotationChanged(int angle);
 protected:
     void initializeGL() Q_DECL_OVERRIDE;
     void paintGL() Q_DECL_OVERRIDE;
     void resizeGL(int width, int height) Q_DECL_OVERRIDE;
     void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
     void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-private:
 
-    Model* m_model;
+private:
+    Model *m_model;
     bool m_core;
     int m_xRot;
     int m_yRot;
@@ -54,7 +51,7 @@ private:
     QMatrix4x4 m_proj;
 
     int m_skinIndex;
-    //创建子线程加载模型
+    // 创建子线程加载模型
     QThread *m_thread_3;
 };
 

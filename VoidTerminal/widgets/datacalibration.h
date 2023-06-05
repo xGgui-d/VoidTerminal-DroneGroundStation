@@ -3,13 +3,14 @@
 
 #include <QWidget>
 
-//使能按钮
+// 使能按钮
 extern bool enableBtn_CAL;
-//等待延迟
+// 等待延迟
 extern int delay_CAL;
 
-namespace Ui {
-class DataCalibration;
+namespace Ui
+{
+    class DataCalibration;
 }
 
 class DataCalibration : public QWidget
@@ -40,7 +41,7 @@ signals:
     void sig_read_positionSet();
     void sig_read_version();
 public slots:
-    void slot_handleCalibrationInfo(QString str,int color);
+    void slot_handleCalibrationInfo(QString str, int color);
 private slots:
     void on_tbtn_acc_clicked();
     void on_tbtn_gyro_clicked();

@@ -55,8 +55,8 @@ public:
     QPlainTextEdit *te_rec;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
-    QComboBox *cb_historySend;
     QPushButton *btn_send;
+    QComboBox *cb_historySend;
     QTextEdit *te_send;
     QGroupBox *groupBox_5;
     QGridLayout *gridLayout_5;
@@ -221,7 +221,7 @@ public:
         te_rec = new QPlainTextEdit(groupBox);
         te_rec->setObjectName(QString::fromUtf8("te_rec"));
         te_rec->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background-color:white;"));
+"background-color:#9BA4B4;"));
 
         gridLayout_2->addWidget(te_rec, 0, 0, 1, 1);
 
@@ -232,26 +232,26 @@ public:
 "color:#F1F6F9;"));
         gridLayout_3 = new QGridLayout(groupBox_2);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        cb_historySend = new QComboBox(groupBox_2);
-        cb_historySend->setObjectName(QString::fromUtf8("cb_historySend"));
-        cb_historySend->setStyleSheet(QString::fromUtf8("background-color: #9BA4B4;"));
-
-        gridLayout_3->addWidget(cb_historySend, 1, 0, 1, 1);
-
         btn_send = new QPushButton(groupBox_2);
         btn_send->setObjectName(QString::fromUtf8("btn_send"));
         btn_send->setMaximumSize(QSize(100, 16777215));
         btn_send->setStyleSheet(QString::fromUtf8("background-color:#9BA4B4;\n"
 ""));
 
-        gridLayout_3->addWidget(btn_send, 1, 1, 1, 1);
+        gridLayout_3->addWidget(btn_send, 2, 1, 1, 1);
+
+        cb_historySend = new QComboBox(groupBox_2);
+        cb_historySend->setObjectName(QString::fromUtf8("cb_historySend"));
+        cb_historySend->setStyleSheet(QString::fromUtf8("background-color: #9BA4B4;"));
+
+        gridLayout_3->addWidget(cb_historySend, 2, 0, 1, 1);
 
         te_send = new QTextEdit(groupBox_2);
         te_send->setObjectName(QString::fromUtf8("te_send"));
         te_send->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background-color:white;"));
+"background-color:#9BA4B4;"));
 
-        gridLayout_3->addWidget(te_send, 0, 0, 1, 2);
+        gridLayout_3->addWidget(te_send, 1, 0, 1, 1);
 
         splitter->addWidget(groupBox_2);
 

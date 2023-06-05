@@ -8,13 +8,14 @@ class DataSortThread : public QObject
 {
     Q_OBJECT
 public:
-    explicit DataSortThread(QObject *parent=nullptr);
+    explicit DataSortThread(QObject *parent = nullptr);
 
     void slot_dataSort(uint8_t *rxBuffer);
+
 private:
     void putDataToWave();
 signals:
-    //发送更新pid的spinbox信号
+    // 发送更新pid的spinbox信号
     void sig_updateSpinBoxPID();
 };
 

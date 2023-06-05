@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class Calculator;
+namespace Ui
+{
+    class Calculator;
 }
 
 class Calculator : public QWidget
@@ -20,7 +21,7 @@ private slots:
 
 private:
     Ui::Calculator *ui;
-    //各种校验方法
+    // 各种校验方法
     QString m_checkSum(QByteArray inputData);
     QString m_checkROX(QByteArray inputData);
     QString m_checkLRC(QByteArray inputData);

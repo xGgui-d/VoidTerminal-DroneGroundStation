@@ -1,9 +1,8 @@
 #include "note.h"
 #include "ui_note.h"
 #include <QDebug>
-Note::Note(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::Note)
+Note::Note(QWidget *parent) : QMainWindow(parent),
+                              ui(new Ui::Note)
 {
     ui->setupUi(this);
     // 设置图标

@@ -167,10 +167,6 @@ extern float VALUE;
 ## 五、版权说明
 
 * 作者：xGgui
-* 邮箱：1723172785@qq.com
-* 联系：
-  * qq: 1723172785    
-  * vx: thedragonjiang666
 * 该项目签署了 MIT 授权许可
 * 软件仅供学习交流使用
 * 不得用于商业用途
